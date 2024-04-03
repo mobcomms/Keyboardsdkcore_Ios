@@ -1,0 +1,11 @@
+framework module KeyboardSDKCore {
+  umbrella header "KeyboardSDKCore.h"
+  export *
+
+  module * { export * }
+}
+
+module KeyboardSDKCore.Swift {
+  header "KeyboardSDKCore-Swift.h"
+  requires objc
+}

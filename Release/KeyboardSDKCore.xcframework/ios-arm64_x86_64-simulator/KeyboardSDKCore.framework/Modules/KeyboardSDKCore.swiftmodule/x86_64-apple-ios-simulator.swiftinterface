@@ -1,0 +1,1152 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KeyboardSDKCore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AudioToolbox
+import Compression
+import CoreFoundation
+import CoreGraphics
+import Foundation
+@_exported import KeyboardSDKCore
+import OSLog
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct ENEmoji : Swift.Equatable, Swift.Hashable {
+  public init(_ char: Swift.String)
+  public let char: Swift.String
+  public func emojiToHex() -> Swift.String
+  public func toImage() -> UIKit.UIImage?
+  public static func == (a: KeyboardSDKCore.ENEmoji, b: KeyboardSDKCore.ENEmoji) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension KeyboardSDKCore.ENEmoji {
+  public static var all: [KeyboardSDKCore.ENEmoji] {
+    get
+  }
+}
+extension Swift.Dictionary {
+  public static func from(jsonString: Swift.String) -> Swift.Dictionary<Key, Value>
+  public var jsonString: Swift.String {
+    get
+    set
+  }
+}
+public enum ENActivityIndicatorType : Swift.CaseIterable {
+  case ballClipRotate
+  case ballClipRotateMultiple
+  case circleStrokeSpin
+  public static func == (a: KeyboardSDKCore.ENActivityIndicatorType, b: KeyboardSDKCore.ENActivityIndicatorType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [KeyboardSDKCore.ENActivityIndicatorType]
+  public static var allCases: [KeyboardSDKCore.ENActivityIndicatorType] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias FadeInAnimation = (UIKit.UIView) -> Swift.Void
+public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -> Swift.Void
+@objc @_Concurrency.MainActor(unsafe) final public class ENActivityIndicatorView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_TYPE: KeyboardSDKCore.ENActivityIndicatorType
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_COLOR: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_TEXT_COLOR: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_PADDING: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_SIZE: CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD: Swift.Int
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MINIMUM_DISPLAY_TIME: Swift.Int
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE: Swift.String?
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE_SPACING: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE_FONT: UIKit.UIFont
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_BACKGROUND_COLOR: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_FADE_IN_ANIMATION: (_ view: UIKit.UIView) -> Swift.Void
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_FADE_OUT_ANIMATION: (_ view: UIKit.UIView, _ complete: @escaping () -> Swift.Void) -> Swift.Void
+  @_Concurrency.MainActor(unsafe) final public var type: KeyboardSDKCore.ENActivityIndicatorType
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var color: UIKit.UIColor
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var padding: CoreFoundation.CGFloat
+  @available(*, deprecated)
+  @_Concurrency.MainActor(unsafe) final public var animating: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var isAnimating: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, type: KeyboardSDKCore.ENActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreFoundation.CGFloat? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) final public func startAnimating()
+  @_Concurrency.MainActor(unsafe) final public func stopAnimating()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ENSettingManager {
+  public static let shared: KeyboardSDKCore.ENSettingManager
+  public var isFirstUser: Swift.Bool {
+    get
+    set
+  }
+  public var useTheme: KeyboardSDKCore.ENKeyboardThemeModel {
+    get
+    set
+  }
+  public var isKeyboardButtonValuePreviewShow: Swift.Bool {
+    get
+    set
+  }
+  public var useHaptic: Swift.Bool {
+    get
+    set
+  }
+  public var hapticPower: Swift.Int {
+    get
+    set
+  }
+  public var userMemo: [Swift.String] {
+    get
+    set
+  }
+  public var toolbarStyle: KeyboardSDKCore.ENToolbarStyle {
+    get
+    set
+  }
+  public var toolbarItems: [KeyboardSDKCore.ENToolbarItem] {
+    get
+    set
+  }
+  public var pressKeyboardCount: Swift.Int {
+    get
+    set
+  }
+  public var pressKeyboardCountDate: Swift.String {
+    get
+    set
+  }
+  public var useNewsAd: Swift.Bool {
+    get
+    set
+  }
+  public var useAd: Swift.Bool {
+    get
+    set
+  }
+  public var useSound: Swift.Bool {
+    get
+    set
+  }
+  public var soundID: Swift.Int {
+    get
+    set
+  }
+  public var keyboardHeightRate: Swift.Float {
+    get
+    set
+  }
+  public var keyboardShowCount: Swift.Int {
+    get
+    set
+  }
+  public func getKeyboardHeight(isLandcape: Swift.Bool) -> CoreFoundation.CGFloat
+  public func getKeyboardCustomHeightForDutchPay() -> CoreFoundation.CGFloat
+  public func getKeyboardCustomHeight(isLandcape: Swift.Bool) -> CoreFoundation.CGFloat
+  public var isUsePhotoTheme: Swift.Bool {
+    get
+    set
+  }
+  public var photoThemeInfo: KeyboardSDKCore.ENKeyboardTheme {
+    get
+    set
+  }
+  public var keyboardType: KeyboardSDKCore.ENKeyboardType {
+    get
+    set
+  }
+  public var userIdfa: Swift.String {
+    get
+    set
+  }
+  public var ppzToken: Swift.String {
+    get
+    set
+  }
+  public var isFistUsingKeyboard: Swift.Bool {
+    get
+    set
+  }
+  public var hanaCustomerID: Swift.String {
+    get
+    set
+  }
+  public var usingKeyboardCnt: Swift.Int {
+    get
+    set
+  }
+  public var usingKeyboardCntFlag: Swift.Bool {
+    get
+    set
+  }
+  public var readyForHanaPoint: Swift.Int {
+    get
+    set
+  }
+  public var toolbarBrandUrl: Swift.String {
+    get
+    set
+  }
+  public var toolbarBrandImageUrl: Swift.String {
+    get
+    set
+  }
+  public var brandUtilDay: Swift.String {
+    get
+    set
+  }
+  public var zoneToastMsg: Swift.String {
+    get
+    set
+  }
+  public var setDebug: Swift.Bool {
+    get
+    set
+  }
+  @objc deinit
+}
+public struct ENKeyboardThemeListModel : Swift.Codable, KeyboardSDKCore.DHCodable {
+  public var data: [KeyboardSDKCore.ENKeyboardThemeModel]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class EN10KeyAutomata : KeyboardSDKCore.ENKoreanAutomata {
+  override public func makeTextWith(inputed: Swift.String?)
+  override public init(with proxy: (any UIKit.UITextDocumentProxy)?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ENKeyboardSDKCore {
+  public static let shared: KeyboardSDKCore.ENKeyboardSDKCore
+  public var apiKey: Swift.String
+  public var groupDirectoryPath: Swift.String? {
+    get
+  }
+  public var groupDirectoryURL: Foundation.URL? {
+    get
+  }
+  public func isKeyboardExtensionEnabled() -> Swift.Bool
+  @objc deinit
+}
+extension Swift.String {
+  public static func from(dict: Swift.Dictionary<Swift.String, Any>) -> Swift.String
+  public var dictionary: Swift.Dictionary<Swift.String, Any> {
+    get
+    set
+  }
+  public func height(withConstrainedWidth width: CoreFoundation.CGFloat, font: UIKit.UIFont) -> CoreFoundation.CGFloat
+  public func width(withConstrainedHeight height: CoreFoundation.CGFloat, font: UIKit.UIFont) -> CoreFoundation.CGFloat
+  public func image(width: CoreFoundation.CGFloat = 40, height: CoreFoundation.CGFloat = 40) -> UIKit.UIImage?
+}
+extension Swift.String.Encoding {
+  public static var eucKR: Swift.String.Encoding {
+    get
+  }
+}
+public struct DHImageColors {
+  public var background: UIKit.UIColor!
+  public var primary: UIKit.UIColor!
+  public var secondary: UIKit.UIColor!
+  public var detail: UIKit.UIColor!
+  public init(background: UIKit.UIColor, primary: UIKit.UIColor, secondary: UIKit.UIColor, detail: UIKit.UIColor)
+}
+public enum DHImageColorsQuality : CoreFoundation.CGFloat {
+  case lowest
+  case low
+  case high
+  case highest
+  public init?(rawValue: CoreFoundation.CGFloat)
+  public typealias RawValue = CoreFoundation.CGFloat
+  public var rawValue: CoreFoundation.CGFloat {
+    get
+  }
+}
+extension UIKit.UIImage {
+  public func getColors(quality: KeyboardSDKCore.DHImageColorsQuality = .high, _ completion: @escaping (KeyboardSDKCore.DHImageColors?) -> Swift.Void)
+  public func getColors(quality: KeyboardSDKCore.DHImageColorsQuality = .high) -> KeyboardSDKCore.DHImageColors?
+}
+public struct DHUserDefaultsConstants : Swift.RawRepresentable {
+  public var rawValue: Swift.String
+  public var value: Swift.String {
+    get
+  }
+  public init(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+}
+extension Foundation.UserDefaults {
+  public static let enKeyboardStandard: Foundation.UserDefaults?
+  public func isFirstRun() -> Swift.Bool
+  public func setFirstRun()
+}
+public enum CompressionMethod : Swift.UInt16 {
+  case none
+  case deflate
+  public init?(rawValue: Swift.UInt16)
+  public typealias RawValue = Swift.UInt16
+  public var rawValue: Swift.UInt16 {
+    get
+  }
+}
+public typealias CRC32 = Swift.UInt32
+public typealias Consumer = (_ data: Foundation.Data) throws -> Swift.Void
+public typealias Provider = (_ position: Swift.Int, _ size: Swift.Int) throws -> Foundation.Data
+extension Foundation.Data {
+  public func crc32(checksum: KeyboardSDKCore.CRC32) -> KeyboardSDKCore.CRC32
+  public static func compress(size: Swift.Int, bufferSize: Swift.Int, provider: (_ position: Swift.Int, _ size: Swift.Int) throws -> Foundation.Data, consumer: (_ data: Foundation.Data) throws -> Swift.Void) throws -> KeyboardSDKCore.CRC32
+  public static func decompress(size: Swift.Int, bufferSize: Swift.Int, skipCRC32: Swift.Bool, provider: (_ position: Swift.Int, _ size: Swift.Int) throws -> Foundation.Data, consumer: (_ data: Foundation.Data) throws -> Swift.Void) throws -> KeyboardSDKCore.CRC32
+}
+@_hasMissingDesignatedInitializers public class ENKeyboardSDKCoreInfo {
+  public static var version: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public struct ENThemeColors {
+  public var tab_off: UIKit.UIColor
+  public var tab_on: UIKit.UIColor
+  public var top_line: UIKit.UIColor
+  public var key_text: UIKit.UIColor
+  public var bot_line: UIKit.UIColor
+  public var bot_tab_color: UIKit.UIColor
+  public var fav_text: UIKit.UIColor
+  public var sp_key_alpha: Swift.Int
+  public var nor_key_alpha: Swift.Int
+  public var nor_btn_color: UIKit.UIColor
+  public var sp_btn_color: UIKit.UIColor
+  public var bg_alpha: Swift.Int
+  public var specialKeyTextColor: UIKit.UIColor
+  public init(json: Swift.Dictionary<Swift.String, Any>?, with image: UIKit.UIImage?)
+}
+public class ENMostRecentEmojiProvider : KeyboardSDKCore.ENFrequentEmojiProvider {
+  public init(maxCount: Swift.Int = 30, defaults: Foundation.UserDefaults = .standard)
+  public var emojis: [KeyboardSDKCore.ENEmoji] {
+    get
+  }
+  public var emojiChars: [Swift.String] {
+    get
+  }
+  public func registerEmoji(_ emoji: KeyboardSDKCore.ENEmoji)
+  @objc deinit
+}
+public enum ENKeyboardGlobalSubMenuViewAction {
+  case changeKeyboard
+  case toEnglish
+  case toKorean
+  public static func == (a: KeyboardSDKCore.ENKeyboardGlobalSubMenuViewAction, b: KeyboardSDKCore.ENKeyboardGlobalSubMenuViewAction) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ENKeyboardGlobalSubMenuViewDelegate : AnyObject {
+  func globalSubMenuTapped(menu: KeyboardSDKCore.ENKeyboardGlobalSubMenuView, action: KeyboardSDKCore.ENKeyboardGlobalSubMenuViewAction)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ENKeyboardGlobalSubMenuView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static let needSize: CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any KeyboardSDKCore.ENKeyboardGlobalSubMenuViewDelegate)?
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, theme: KeyboardSDKCore.ENThemeColors)
+  @objc deinit
+}
+extension KeyboardSDKCore.Archive {
+  final public func totalUnitCountForRemoving(_ entry: KeyboardSDKCore.Entry) -> Swift.Int64
+  final public func totalUnitCountForReading(_ entry: KeyboardSDKCore.Entry) -> Swift.Int64
+  final public func totalUnitCountForAddingItem(at url: Foundation.URL) -> Swift.Int64
+}
+public protocol ENViewPrsenter : AnyObject {
+  func enPresent(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Swift.Bool, completion: @escaping () -> Swift.Void)
+  func enPresent(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Swift.Bool)
+  func enDismiss(animated flag: Swift.Bool, popToRoot: Swift.Bool, completion: @escaping () -> Swift.Void)
+  func enDismiss(animated flag: Swift.Bool, popToRoot: Swift.Bool)
+}
+extension KeyboardSDKCore.ENViewPrsenter where Self : UIKit.UIViewController {
+  public func enPresent(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Swift.Bool = true, completion: @escaping () -> Swift.Void)
+  public func enPresent(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Swift.Bool = true)
+  public func enDismiss(animated flag: Swift.Bool = true, popToRoot: Swift.Bool = false, completion: @escaping () -> Swift.Void)
+  public func enDismiss(animated flag: Swift.Bool = true, popToRoot: Swift.Bool = false)
+}
+@_hasMissingDesignatedInitializers public class DHUtils {
+  public static func isOpenAccessGranted() -> Swift.Bool
+  public static func isKeyboardExtensionEnabled() -> Swift.Bool
+  public static func getAddress(for network: KeyboardSDKCore.ENNetwork) -> Swift.String?
+  public static func getNowDateToString() -> Swift.String
+  @objc deinit
+}
+public enum ENNetwork : Swift.String {
+  case wifi
+  case cellular
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class EN10KeyManager : KeyboardSDKCore.ENKeyboardManager {
+  override public init(with proxy: (any UIKit.UITextDocumentProxy)?, needsInputModeSwitchKey: Swift.Bool)
+  override public func updateKeyboardFrame(frame: CoreFoundation.CGRect)
+  override public func themeChanged()
+  override public func unloadKeyboard()
+  override public func loadKeys(_ size: CoreFoundation.CGSize = .zero)
+  @objc deinit
+}
+extension KeyboardSDKCore.EN10KeyManager : KeyboardSDKCore.ENKeyboardGlobalSubMenuViewDelegate {
+  public func globalSubMenuTapped(menu: KeyboardSDKCore.ENKeyboardGlobalSubMenuView, action: KeyboardSDKCore.ENKeyboardGlobalSubMenuViewAction)
+}
+@_hasMissingDesignatedInitializers public class DHLogger {
+  public static let dateFormatter: Foundation.DateFormatter
+  public static func log(_ message: Any)
+  public static func simplelog(_ message: Any)
+  public static func log(format: Swift.String, _ arguments: any Swift.CVarArg...)
+  public static func systemInfoLog(message: Swift.String)
+  @objc deinit
+}
+public enum ENToolbarStyle : Swift.Int {
+  case paging
+  case scroll
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol ENKeyboardManagerDelegate : AnyObject {
+  func handleInputModeList(manager: KeyboardSDKCore.ENKeyboardManager)
+  func textInputted(manager: KeyboardSDKCore.ENKeyboardManager, text: Swift.String?)
+  func showEmojiView(manager: KeyboardSDKCore.ENKeyboardManager)
+}
+@objc open class ENKeyboardManager : ObjectiveC.NSObject {
+  public var keyboardTheme: KeyboardSDKCore.ENKeyboardTheme {
+    get
+    set
+  }
+  public var nextKeyboardButton: UIKit.UIView?
+  public var stackView1: UIKit.UIStackView?
+  public var stackView2: UIKit.UIStackView?
+  public var stackView3: UIKit.UIStackView?
+  public var stackView4: UIKit.UIStackView?
+  public var stackView5: UIKit.UIStackView?
+  public var isAlphabet: Swift.Bool
+  public var keyboardState: KeyboardSDKCore.ENKeyboardState
+  weak public var delegate: (any KeyboardSDKCore.ENKeyboardManagerDelegate)?
+  public init(with proxy: (any UIKit.UITextDocumentProxy)?, needsInputModeSwitchKey: Swift.Bool)
+  open func loadKeys(_ size: CoreFoundation.CGSize = .zero)
+  open func updateKeyboardFrame(frame: CoreFoundation.CGRect)
+  open func themeChanged()
+  open func unloadKeyboard()
+  @objc deinit
+}
+extension Foundation.FileManager {
+  public func zipItem(at sourceURL: Foundation.URL, to destinationURL: Foundation.URL, shouldKeepParent: Swift.Bool = true, compressionMethod: KeyboardSDKCore.CompressionMethod = .none, progress: Foundation.Progress? = nil) throws
+  public func unzipItem(at sourceURL: Foundation.URL, to destinationURL: Foundation.URL, skipCRC32: Swift.Bool = false, progress: Foundation.Progress? = nil, preferredEncoding: Swift.String.Encoding? = nil) throws
+}
+extension Foundation.URL {
+  public func isContained(in parentDirectoryURL: Foundation.URL) -> Swift.Bool
+}
+public let defaultReadChunkSize: Swift.UInt32
+public let defaultWriteChunkSize: Swift.UInt32
+public let defaultFilePermissions: Swift.UInt16
+public let defaultDirectoryPermissions: Swift.UInt16
+final public class Archive : Swift.Sequence {
+  public enum ArchiveError : Swift.Error {
+    case unreadableArchive
+    case unwritableArchive
+    case invalidEntryPath
+    case invalidCompressionMethod
+    case invalidStartOfCentralDirectoryOffset
+    case missingEndOfCentralDirectoryRecord
+    case invalidNumberOfEntriesOnDisk
+    case invalidNumberOfEntriesInCentralDirectory
+    case cancelledOperation
+    case invalidBufferSize
+    public static func == (a: KeyboardSDKCore.Archive.ArchiveError, b: KeyboardSDKCore.Archive.ArchiveError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum AccessMode : Swift.UInt {
+    case create
+    case read
+    case update
+    public init?(rawValue: Swift.UInt)
+    public typealias RawValue = Swift.UInt
+    public var rawValue: Swift.UInt {
+      get
+    }
+  }
+  final public let url: Foundation.URL
+  final public let accessMode: KeyboardSDKCore.Archive.AccessMode
+  public init?(url: Foundation.URL, accessMode mode: KeyboardSDKCore.Archive.AccessMode, preferredEncoding: Swift.String.Encoding? = nil)
+  public init?(data: Foundation.Data = Data(), accessMode mode: KeyboardSDKCore.Archive.AccessMode, preferredEncoding: Swift.String.Encoding? = nil)
+  @objc deinit
+  final public func makeIterator() -> Swift.AnyIterator<KeyboardSDKCore.Entry>
+  final public subscript(path: Swift.String) -> KeyboardSDKCore.Entry? {
+    get
+  }
+  public typealias Element = KeyboardSDKCore.Entry
+  public typealias Iterator = Swift.AnyIterator<KeyboardSDKCore.Entry>
+}
+@objc @_inheritsConvenienceInitializers public class ENQwertyManager : KeyboardSDKCore.ENKeyboardManager {
+  override public init(with proxy: (any UIKit.UITextDocumentProxy)?, needsInputModeSwitchKey: Swift.Bool)
+  override public func updateKeyboardFrame(frame: CoreFoundation.CGRect)
+  override public func themeChanged()
+  override public func loadKeys(_ size: CoreFoundation.CGSize = .zero)
+  @objc deinit
+}
+extension KeyboardSDKCore.ENQwertyManager : KeyboardSDKCore.ENKeyboardGlobalSubMenuViewDelegate {
+  public func globalSubMenuTapped(menu: KeyboardSDKCore.ENKeyboardGlobalSubMenuView, action: KeyboardSDKCore.ENKeyboardGlobalSubMenuViewAction)
+}
+@objc @_inheritsConvenienceInitializers public class ENKoreanQwertyAutomata : KeyboardSDKCore.ENKoreanAutomata {
+  override public func makeTextWith(inputed: Swift.String?)
+  override public init(with proxy: (any UIKit.UITextDocumentProxy)?)
+  @objc deinit
+}
+@objc open class ENAutomata : ObjectiveC.NSObject {
+  public init(with proxy: (any UIKit.UITextDocumentProxy)?)
+  open func clearInputed()
+  open func makeTextWith(inputed: Swift.String?)
+  @objc deinit
+}
+public struct ENEmojiKeyboardConfiguration {
+  public init(itemSize: CoreFoundation.CGFloat = 40, rows: Swift.Int = 5, horizontalSpacing: CoreFoundation.CGFloat = 10, verticalSpacing: CoreFoundation.CGFloat = 6)
+  public let itemSize: CoreFoundation.CGFloat
+  public let rows: Swift.Int
+  public let horizontalSpacing: CoreFoundation.CGFloat
+  public let verticalSpacing: CoreFoundation.CGFloat
+  public static let standardLargePadLandscape: KeyboardSDKCore.ENEmojiKeyboardConfiguration
+  public static let standardLargePadPortrait: KeyboardSDKCore.ENEmojiKeyboardConfiguration
+  public static let standardPadLandscape: KeyboardSDKCore.ENEmojiKeyboardConfiguration
+  public static let standardPadPortrait: KeyboardSDKCore.ENEmojiKeyboardConfiguration
+  public static let standardPhoneLandscape: KeyboardSDKCore.ENEmojiKeyboardConfiguration
+  public static let standardPhonePortrait: KeyboardSDKCore.ENEmojiKeyboardConfiguration
+}
+@objc @_inheritsConvenienceInitializers public class ENKoreanAutomata : KeyboardSDKCore.ENAutomata {
+  override public func clearInputed()
+  override public func makeTextWith(inputed: Swift.String?)
+  override public init(with proxy: (any UIKit.UITextDocumentProxy)?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class DHRequestManager {
+  public static let shared: KeyboardSDKCore.DHRequestManager
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ENKeyboardThemeModel : Swift.Codable, KeyboardSDKCore.DHCodable {
+  public var idx: Swift.String?
+  public var cat: Swift.String?
+  public var image: Swift.String?
+  public var name: Swift.String?
+  public var zip_file_name: Swift.String?
+  public var unzip_file_name: Swift.String?
+  public var common_down_path: Swift.String?
+  public var custom_down_path: Swift.String?
+  public var down_cnt: Swift.String?
+  public var down_path: Swift.String?
+  public var apng_down_path: Swift.String?
+  public var isOwn: Swift.Bool {
+    get
+    set
+  }
+  public var isNew: Swift.Bool {
+    get
+    set
+  }
+  public var isBuy: Swift.Bool {
+    get
+    set
+  }
+  public var price: Swift.Int {
+    get
+    set
+  }
+  public var isPay: Swift.Bool {
+    get
+    set
+  }
+  public var isLive: Swift.Bool {
+    get
+  }
+  public static func parsing(json: Swift.String) -> KeyboardSDKCore.ENKeyboardThemeModel?
+  public func themeFileInfo() -> KeyboardSDKCore.ENKeyboardThemeFileInfo
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func showEnToast(message: Swift.String, font: UIKit.UIFont = UIFont.systemFont(ofSize: 14.0, weight: .regular), backgroundColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.6))
+}
+public enum ENEmojiCategory : Swift.String, Swift.CaseIterable, Swift.Codable, KeyboardSDKCore.ENEmojiProvider, Swift.Identifiable, Swift.Equatable {
+  case frequent, smileys, animals, foods, activities, travels, objects, symbols, flags
+  public var id: Swift.String {
+    get
+  }
+  public static var frequentEmojiProvider: any KeyboardSDKCore.ENFrequentEmojiProvider
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [KeyboardSDKCore.ENEmojiCategory]
+  public typealias ID = Swift.String
+  public typealias RawValue = Swift.String
+  public static var allCases: [KeyboardSDKCore.ENEmojiCategory] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension KeyboardSDKCore.ENEmojiCategory {
+  public static var all: [KeyboardSDKCore.ENEmojiCategory] {
+    get
+  }
+  public var emojis: [KeyboardSDKCore.ENEmoji] {
+    get
+  }
+  public var fallbackDisplayEmoji: KeyboardSDKCore.ENEmoji {
+    get
+  }
+  public var title: Swift.String {
+    get
+  }
+}
+public protocol DHCodable {
+  var json: Swift.String? { get }
+  var debugDescription: Swift.String { get }
+}
+extension KeyboardSDKCore.DHCodable where Self : Swift.Decodable, Self : Swift.Encodable {
+  public var json: Swift.String? {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public struct Entry : Swift.Equatable {
+  public enum EntryType : Swift.Int {
+    case file
+    case directory
+    case symlink
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public func path(using encoding: Swift.String.Encoding) -> Swift.String
+  public var path: Swift.String {
+    get
+  }
+  public var fileAttributes: [Foundation.FileAttributeKey : Any] {
+    get
+  }
+  public var checksum: KeyboardSDKCore.CRC32 {
+    get
+  }
+  public var type: KeyboardSDKCore.Entry.EntryType {
+    get
+  }
+  public var compressedSize: Swift.Int {
+    get
+  }
+  public var uncompressedSize: Swift.Int {
+    get
+  }
+  public static func == (lhs: KeyboardSDKCore.Entry, rhs: KeyboardSDKCore.Entry) -> Swift.Bool
+}
+public protocol ENKeyboardViewManagerDelegate : AnyObject {
+  func enKeyboardViewManager(_ delegate: KeyboardSDKCore.ENKeyboardViewManager, restoreToKeyboard: Swift.Bool)
+}
+public class ENKeyboardViewManager {
+  public var notifyView: UIKit.UIView {
+    get
+    set
+  }
+  public var customView: UIKit.UIView {
+    get
+    set
+  }
+  public var keyboardAreaView: UIKit.UIView {
+    get
+    set
+  }
+  public var keyboardManager: KeyboardSDKCore.ENKeyboardManager?
+  weak public var delegate: (any KeyboardSDKCore.ENKeyboardViewManagerDelegate)?
+  public var isUseDutchPay: Swift.Bool
+  public var isUseNotifyView: Swift.Bool
+  public var keyboardTheme: KeyboardSDKCore.ENKeyboardTheme {
+    get
+    set
+  }
+  public var customTextField: UIKit.UITextField? {
+    get
+    set
+  }
+  public var isLand: Swift.Bool {
+    get
+    set
+  }
+  public var heightConstraint: UIKit.NSLayoutConstraint?
+  public var keyboardHeightConstraint: UIKit.NSLayoutConstraint?
+  public var notifyHeightConstraint: UIKit.NSLayoutConstraint?
+  public var proxy: (any UIKit.UITextDocumentProxy)?
+  public init(proxy: (any UIKit.UITextDocumentProxy)?, needsInputModeSwitchKey: Swift.Bool)
+  public func loadKeyboardManager(_ needsInputModeSwitchKey: Swift.Bool)
+  public func loadKeyboardView() -> UIKit.UIView
+  public func removeAllKeyboardView()
+  public func updateKeys()
+  public func initCustomArea(with custom: UIKit.UIView)
+  public func initNotifyArea(with notify: UIKit.UIView)
+  public func updateKeyboardHeight(isLand: Swift.Bool, addedContentHeight: CoreFoundation.CGFloat = 0.0, isDutchPay: Swift.Bool = false)
+  @objc deinit
+}
+extension KeyboardSDKCore.ENKeyboardViewManager : KeyboardSDKCore.ENEmojiViewDelegate {
+  public func showEmojiView()
+  public func dismissEmojiView()
+  public func loadEmojiView()
+  public func updateEmojiConstraints()
+  public func closeEmojiView(emojiVeiw: KeyboardSDKCore.ENEmojiView)
+}
+extension KeyboardSDKCore.ENKeyboardViewManager {
+  public func clearkeyboardAreaView()
+  public func showCustomContents(customView: UIKit.UIView?)
+  public func updateContentView()
+  public func restoreKeyboardViewFrom(customView: UIKit.UIView?)
+}
+extension KeyboardSDKCore.ENKeyboardViewManager {
+  public func removeConstraints()
+  public func updateConstraints()
+  public func updateNotifyViewConstraint()
+}
+public struct ENKeyboardThemeCategoryListModel : Swift.Codable, KeyboardSDKCore.DHCodable {
+  public var category: KeyboardSDKCore.ENKeyboardThemeCategorySubListModel?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ENKeyboardThemeCategorySubListModel : Swift.Codable, KeyboardSDKCore.DHCodable {
+  public var word: [KeyboardSDKCore.ENKeyboardThemeCategoryModel]?
+  public var color: [KeyboardSDKCore.ENKeyboardThemeCategoryModel]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol ENFrequentEmojiProvider : AnyObject, KeyboardSDKCore.ENEmojiProvider {
+  func registerEmoji(_ emoji: KeyboardSDKCore.ENEmoji)
+}
+extension Foundation.UserDefaults {
+  public static var enKeyboardGroupStandard: Foundation.UserDefaults? {
+    get
+  }
+  public func isUsePhotoTheme() -> Swift.Bool
+  public func setUsePhotoTheme(isUse: Swift.Bool)
+  public func savePhotoThemeInfo(theme: KeyboardSDKCore.ENKeyboardTheme)
+  public func loadPhotoThemeInfo() -> KeyboardSDKCore.ENKeyboardTheme
+  public func setSelectedThemeInfo(theme: KeyboardSDKCore.ENKeyboardThemeModel)
+  public func getSelectedThemeInfo() -> KeyboardSDKCore.ENKeyboardThemeModel?
+  public func setUseKeyboardButtonValuePreview(show: Swift.Bool)
+  public func useKeyboardButtonValuePreview() -> Swift.Bool
+  public func setUseHaptic(use: Swift.Bool)
+  public func setHapticPower(power: Swift.Int)
+  public func getHapticPower() -> Swift.Int
+  public func setUserMemo(memo: [Swift.String])
+  public func getUserMemo() -> [Swift.String]
+  public func setPressKeyboardCount(pressCount: Swift.Int)
+  public func getPressKeyboardCount() -> Swift.Int
+  public func setPressKeyboardCountDate(insertDate: Swift.String)
+  public func getPressKeyboardCountDate() -> Swift.String
+  public func getUseNewsAd() -> Swift.Bool
+  public func setUseNewsAd(isUsed: Swift.Bool)
+  public func getUseAd() -> Swift.Bool
+  public func setUseAd(isUsed: Swift.Bool)
+  public func useHaptic() -> Swift.Bool
+  public func setUseSound(use: Swift.Bool)
+  public func useSound() -> Swift.Bool
+  public func setUseSoundId(_ soundId: Swift.Int)
+  public func getSoundID() -> Swift.Int
+  public func setKeyboardHeightRate(_ rate: Swift.Float = 20.0)
+  public func getKeyboardHeightRate() -> Swift.Float
+  public func setKeyboardType(_ type: KeyboardSDKCore.ENKeyboardType)
+  public func getKeyboardType() -> KeyboardSDKCore.ENKeyboardType
+  public func setToolbarStyle(toolbarStyle: KeyboardSDKCore.ENToolbarStyle)
+  public func getToolbarStyle() -> KeyboardSDKCore.ENToolbarStyle
+  public func setShowRealKeyboard(index: Swift.Int)
+  public func getShowRealKeyboard() -> Swift.Int
+  public func setIsFirstUser(isFirst: Swift.Bool)
+  public func getIsFirstUser() -> Swift.Bool
+  public func setToolbarArray(toolbarArray: [Swift.Int])
+  public func getToolbarArray() -> [Swift.Int]
+  public func setToolbar(toolbarArray: [KeyboardSDKCore.ENToolbarItem])
+  public func getToolbar() -> [KeyboardSDKCore.ENToolbarItem]
+  public func setIsDebug(isDebug: Swift.Bool)
+  public func getIsDebug() -> Swift.Bool
+  public func setIDFA(idfa: Swift.String)
+  public func getIDFA() -> Swift.String
+  public func setPPZToken(token: Swift.String)
+  public func getPPZToken() -> Swift.String
+  public func getFirstUsingKeyboard() -> Swift.Bool
+  public func setFirstUsingKeyboard(isFlag: Swift.Bool)
+  public func setHanaCustomerID(customerID: Swift.String)
+  public func getHanaCustomerID() -> Swift.String
+  public func getToastMsg() -> Swift.String
+  public func setUsingKeyboardCnt(cnt: Swift.Int)
+  public func getUsingKeyboardCnt() -> Swift.Int
+  public func setUsingKeyboardCntFlag(cntFlag: Swift.Bool)
+  public func getUsingKeyboardCntFlag() -> Swift.Bool
+  public func setReadyForHanaPoint(point: Swift.Int)
+  public func getReadyForHanaPoint() -> Swift.Int
+  public func setToolbarBrandUrl(brandUrl: Swift.String)
+  public func getToolbarBrandUrl() -> Swift.String
+  public func setToolbarBrandImageUrl(brandImageUrl: Swift.String)
+  public func getToolbarBrandImageUrl() -> Swift.String
+  public func setBrandUtilDay(day: Swift.String)
+  public func getBrandUtilDay() -> Swift.String
+  public func setToastMsg(msg: Swift.String)
+}
+public struct DHResBase : Swift.Codable, KeyboardSDKCore.DHCodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIImage {
+  public func resizedBy(scale: CoreFoundation.CGFloat) -> UIKit.UIImage?
+  public func resizeImage(image: UIKit.UIImage, targetSize: CoreFoundation.CGSize) -> UIKit.UIImage?
+}
+@_hasMissingDesignatedInitializers public class ENKeyButtonEffectManager {
+  public static let shared: KeyboardSDKCore.ENKeyButtonEffectManager
+  public func excuteSound(with soundId: Swift.Int)
+  public func excuteHaptic(with hapticPower: Swift.Int)
+  @objc deinit
+}
+public struct ENKeyboardThemeCategoryModel : Swift.Codable, KeyboardSDKCore.DHCodable {
+  public var code_id: Swift.String?
+  public var code_val: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol ENEmojiProvider {
+  var emojis: [KeyboardSDKCore.ENEmoji] { get }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ENKeyboardPreView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, theme: KeyboardSDKCore.ENKeyboardTheme?)
+  @objc deinit
+}
+public enum ENToolbarType : Swift.Int {
+  case mobicomz
+  case emoji
+  case emoticon
+  case userMemo
+  case clipboard
+  case coupang
+  case offerwall
+  case dutchPay
+  case hotIssue
+  case cursorLeft
+  case cursorRight
+  case setting
+  case hanaEmoji
+  case hanaApp
+  case hanaPPZone
+  case hanaCoupang
+  case hanaPointList
+  case hanaSetting
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ENKeyboardThemeType : Swift.String {
+  case keyboard
+  case custom
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ENKeyboardThemeFileInfo {
+  public var name: Swift.String
+  public var keyboardUrl: Swift.String?
+  public var customUrl: Swift.String?
+  public static func getDefaultTheme() -> KeyboardSDKCore.ENKeyboardThemeFileInfo
+}
+@_hasMissingDesignatedInitializers public class ENKeyboardThemeManager {
+  public typealias ENKeyboardThemeManagerHandler = (_ theme: KeyboardSDKCore.ENKeyboardTheme) -> Swift.Void
+  public static let shared: KeyboardSDKCore.ENKeyboardThemeManager
+  public var loadedTheme: KeyboardSDKCore.ENKeyboardTheme?
+  public func getCurrentTheme() -> KeyboardSDKCore.ENKeyboardThemeModel
+  public func saveSelectedThemeInfo(theme: KeyboardSDKCore.ENKeyboardThemeModel)
+  public func loadTheme(theme: KeyboardSDKCore.ENKeyboardThemeFileInfo, _ handler: KeyboardSDKCore.ENKeyboardThemeManager.ENKeyboardThemeManagerHandler?)
+  @objc deinit
+}
+extension KeyboardSDKCore.ENKeyboardThemeManager {
+  public func download(theme: KeyboardSDKCore.ENKeyboardThemeFileInfo, complete: @escaping (_ success: Swift.Bool) -> ())
+  public func alreadyDownlaoded(theme: KeyboardSDKCore.ENKeyboardThemeFileInfo) -> Swift.Bool
+  public func removeDownloadedTheme(theme: KeyboardSDKCore.ENKeyboardThemeFileInfo)
+}
+extension KeyboardSDKCore.ENKeyboardThemeManager {
+  public func savePhotoThemeBackground(image: UIKit.UIImage, complete: @escaping (_ success: Swift.Bool) -> ())
+  public func savePhotoTheme(with theme: KeyboardSDKCore.ENKeyboardTheme, originImage: UIKit.UIImage?, complete: @escaping (_ success: Swift.Bool) -> ())
+  public func croppedImageForPhotoTheme(theme: KeyboardSDKCore.ENKeyboardTheme) -> UIKit.UIImage?
+}
+public struct DHApi {
+  public static var HOST: Swift.String
+  public static var baseURL: Foundation.URL {
+    get
+  }
+}
+extension KeyboardSDKCore.DHApi {
+  public struct themePopularList : KeyboardSDKCore.DHNetwork {
+    public var customHost: Swift.String
+    public var method: KeyboardSDKCore.DHApiRequestType
+    public var path: Swift.String
+    public var parameters: [Swift.String : Any]
+    public var isBodyData: Swift.Bool
+    public init(userId: Swift.String?, scaleType: Swift.String = "1", serviceCode: Swift.String = "01")
+  }
+}
+public protocol ENEmojiViewDelegate : AnyObject {
+  func closeEmojiView(emojiVeiw: KeyboardSDKCore.ENEmojiView)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ENEmojiView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public let returnKeyboardButton: UIKit.UIButton
+  @_Concurrency.MainActor(unsafe) public var proxy: (any UIKit.UITextDocumentProxy)?
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any KeyboardSDKCore.ENEmojiViewDelegate)?
+  @_Concurrency.MainActor(unsafe) public var customTextField: UIKit.UITextField?
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) public func setUpWith(emoji: KeyboardSDKCore.ENEmojiCategory = .smileys)
+}
+extension KeyboardSDKCore.ENEmojiView : UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, minimumLineSpacingForSectionAt section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didEndDisplaying cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ENEmojiViewCell : UIKit.UICollectionViewCell {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc deinit
+}
+extension KeyboardSDKCore.Archive {
+  final public func addEntry(with path: Swift.String, relativeTo baseURL: Foundation.URL, compressionMethod: KeyboardSDKCore.CompressionMethod = .none, bufferSize: Swift.UInt32 = defaultWriteChunkSize, progress: Foundation.Progress? = nil) throws
+  final public func addEntry(with path: Swift.String, fileURL: Foundation.URL, compressionMethod: KeyboardSDKCore.CompressionMethod = .none, bufferSize: Swift.UInt32 = defaultWriteChunkSize, progress: Foundation.Progress? = nil) throws
+  final public func addEntry(with path: Swift.String, type: KeyboardSDKCore.Entry.EntryType, uncompressedSize: Swift.UInt32, modificationDate: Foundation.Date = Date(), permissions: Swift.UInt16? = nil, compressionMethod: KeyboardSDKCore.CompressionMethod = .none, bufferSize: Swift.UInt32 = defaultWriteChunkSize, progress: Foundation.Progress? = nil, provider: (_ position: Swift.Int, _ size: Swift.Int) throws -> Foundation.Data) throws
+  final public func remove(_ entry: KeyboardSDKCore.Entry, bufferSize: Swift.UInt32 = defaultReadChunkSize, progress: Foundation.Progress? = nil) throws
+}
+public enum DHApiError : Swift.Error {
+  case requestFailed
+  case jsonConversionFailure
+  case invalidData
+  case responseUnsuccessful
+  case jsonParsingFailure
+  public static func == (a: KeyboardSDKCore.DHApiError, b: KeyboardSDKCore.DHApiError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class DHPaddedLabel : UIKit.UILabel {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var topInset: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var bottomInset: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var leftInset: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var rightInset: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension KeyboardSDKCore.Archive {
+  final public func extract(_ entry: KeyboardSDKCore.Entry, to url: Foundation.URL, bufferSize: Swift.UInt32 = defaultReadChunkSize, skipCRC32: Swift.Bool = false, progress: Foundation.Progress? = nil) throws -> KeyboardSDKCore.CRC32
+  final public func extract(_ entry: KeyboardSDKCore.Entry, bufferSize: Swift.UInt32 = defaultReadChunkSize, skipCRC32: Swift.Bool = false, progress: Foundation.Progress? = nil, consumer: (_ data: Foundation.Data) throws -> Swift.Void) throws -> KeyboardSDKCore.CRC32
+}
+public enum Result<T, U> where U : Swift.Error {
+  case success(T)
+  case failure(U)
+}
+@_hasMissingDesignatedInitializers public class DHApiClient {
+  public static let shared: KeyboardSDKCore.DHApiClient
+  public func fetch<T>(with request: any KeyboardSDKCore.DHNetwork, completion: @escaping (KeyboardSDKCore.Result<T, KeyboardSDKCore.DHApiError>) -> Swift.Void) where T : Swift.Decodable, T : Swift.Encodable
+  public func downloadFile(src: Foundation.URL, dest: Foundation.URL, completion: @escaping (_ success: Swift.Bool) -> ())
+  @objc deinit
+}
+public enum DHApiRequestType : Swift.String {
+  case GET, POST
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol DHNetwork {
+  var method: KeyboardSDKCore.DHApiRequestType { get }
+  var path: Swift.String { get }
+  var parameters: [Swift.String : Any] { get }
+  var isBodyData: Swift.Bool { get }
+  var dataEncoding: Swift.String.Encoding { get }
+}
+extension KeyboardSDKCore.DHNetwork {
+  public var dataEncoding: Swift.String.Encoding {
+    get
+  }
+  public func request(with baseURL: Foundation.URL) -> Foundation.URLRequest
+}
+public enum ENHanglePosition {
+  case ChoSung
+  case JungSung
+  case JongSung
+  public static func == (a: KeyboardSDKCore.ENHanglePosition, b: KeyboardSDKCore.ENHanglePosition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ENConstants {
+}
+public enum ENShiftButtonState {
+  case normal
+  case shift
+  case caps
+  public static func == (a: KeyboardSDKCore.ENShiftButtonState, b: KeyboardSDKCore.ENShiftButtonState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class ENKeyboardTheme {
+  public var isPhotoTheme: Swift.Bool
+  public var photoThemeBackgroundImageURL: Swift.String?
+  public var imageScale: CoreFoundation.CGFloat
+  public var imageOffsetX: CoreFoundation.CGFloat
+  public var imageOffsetY: CoreFoundation.CGFloat
+  public var imageUseWidth: CoreFoundation.CGFloat
+  public var imageUseHeight: CoreFoundation.CGFloat
+  public var imageAlpha: CoreFoundation.CGFloat
+  public var backgroundImage: UIKit.UIImage?
+  public var keyNormalBackgroundImage: UIKit.UIImage?
+  public var keyPressedBackgroundImage: UIKit.UIImage?
+  public var specialKeyNormalBackgroundImage: UIKit.UIImage?
+  public var specialKeyPressedBackgroundImage: UIKit.UIImage?
+  public var keyShiftNormalImage: UIKit.UIImage?
+  public var keyShiftPressedImage: UIKit.UIImage?
+  public var keyCapslockImage: UIKit.UIImage?
+  public var keySpaceImage: UIKit.UIImage?
+  public var keySpecialImage: UIKit.UIImage?
+  public var keyEnterImage: UIKit.UIImage?
+  public var keyDeleteImage: UIKit.UIImage?
+  public var keyEmojiIcon: UIKit.UIImage?
+  public var keyGlobalImage: UIKit.UIImage?
+  public var previewBackgroundImage: UIKit.UIImage?
+  public var themeColors: KeyboardSDKCore.ENThemeColors
+  public init()
+  public func convertPhotoThemeToJsonString() -> Swift.String?
+  public func parsePhotoThemeFrom(json: Swift.String)
+  @objc deinit
+}
+extension KeyboardSDKCore.ENKeyboardTheme {
+  public func clear()
+  public func loadPhotoThemeIcons()
+}
+public enum ENKeyboardType : Swift.Int {
+  case qwerty
+  case tenkey
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension KeyboardSDKCore.Archive {
+  final public var data: Foundation.Data? {
+    get
+  }
+}
+public enum ENKeyboardState {
+  case letter
+  case numbers
+  case symbols
+  public static func == (a: KeyboardSDKCore.ENKeyboardState, b: KeyboardSDKCore.ENKeyboardState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ENToolbarItem : Swift.Codable {
+  public var toolbarType: Swift.String
+  public var displayName: Swift.String
+  public var imgName: Swift.String
+  public var isUsed: Swift.String?
+  public var toolType: KeyboardSDKCore.ENToolbarType {
+    get
+    set
+  }
+  public var isUse: Swift.Bool {
+    get
+    set
+  }
+  public static func parsing(json: Swift.String) -> KeyboardSDKCore.ENToolbarItem?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension KeyboardSDKCore.ENActivityIndicatorType : Swift.Equatable {}
+extension KeyboardSDKCore.ENActivityIndicatorType : Swift.Hashable {}
+extension KeyboardSDKCore.DHImageColorsQuality : Swift.Equatable {}
+extension KeyboardSDKCore.DHImageColorsQuality : Swift.Hashable {}
+extension KeyboardSDKCore.DHImageColorsQuality : Swift.RawRepresentable {}
+extension KeyboardSDKCore.CompressionMethod : Swift.Equatable {}
+extension KeyboardSDKCore.CompressionMethod : Swift.Hashable {}
+extension KeyboardSDKCore.CompressionMethod : Swift.RawRepresentable {}
+extension KeyboardSDKCore.ENKeyboardGlobalSubMenuViewAction : Swift.Equatable {}
+extension KeyboardSDKCore.ENKeyboardGlobalSubMenuViewAction : Swift.Hashable {}
+extension KeyboardSDKCore.ENNetwork : Swift.Equatable {}
+extension KeyboardSDKCore.ENNetwork : Swift.Hashable {}
+extension KeyboardSDKCore.ENNetwork : Swift.RawRepresentable {}
+extension KeyboardSDKCore.ENToolbarStyle : Swift.Equatable {}
+extension KeyboardSDKCore.ENToolbarStyle : Swift.Hashable {}
+extension KeyboardSDKCore.ENToolbarStyle : Swift.RawRepresentable {}
+extension KeyboardSDKCore.Archive.ArchiveError : Swift.Equatable {}
+extension KeyboardSDKCore.Archive.ArchiveError : Swift.Hashable {}
+extension KeyboardSDKCore.Archive.AccessMode : Swift.Equatable {}
+extension KeyboardSDKCore.Archive.AccessMode : Swift.Hashable {}
+extension KeyboardSDKCore.Archive.AccessMode : Swift.RawRepresentable {}
+extension KeyboardSDKCore.ENEmojiCategory : Swift.Hashable {}
+extension KeyboardSDKCore.ENEmojiCategory : Swift.RawRepresentable {}
+extension KeyboardSDKCore.Entry.EntryType : Swift.Equatable {}
+extension KeyboardSDKCore.Entry.EntryType : Swift.Hashable {}
+extension KeyboardSDKCore.Entry.EntryType : Swift.RawRepresentable {}
+extension KeyboardSDKCore.ENToolbarType : Swift.Equatable {}
+extension KeyboardSDKCore.ENToolbarType : Swift.Hashable {}
+extension KeyboardSDKCore.ENToolbarType : Swift.RawRepresentable {}
+extension KeyboardSDKCore.ENKeyboardThemeType : Swift.Equatable {}
+extension KeyboardSDKCore.ENKeyboardThemeType : Swift.Hashable {}
+extension KeyboardSDKCore.ENKeyboardThemeType : Swift.RawRepresentable {}
+extension KeyboardSDKCore.DHApiError : Swift.Equatable {}
+extension KeyboardSDKCore.DHApiError : Swift.Hashable {}
+extension KeyboardSDKCore.DHApiRequestType : Swift.Equatable {}
+extension KeyboardSDKCore.DHApiRequestType : Swift.Hashable {}
+extension KeyboardSDKCore.DHApiRequestType : Swift.RawRepresentable {}
+extension KeyboardSDKCore.ENHanglePosition : Swift.Equatable {}
+extension KeyboardSDKCore.ENHanglePosition : Swift.Hashable {}
+extension KeyboardSDKCore.ENShiftButtonState : Swift.Equatable {}
+extension KeyboardSDKCore.ENShiftButtonState : Swift.Hashable {}
+extension KeyboardSDKCore.ENKeyboardType : Swift.Equatable {}
+extension KeyboardSDKCore.ENKeyboardType : Swift.Hashable {}
+extension KeyboardSDKCore.ENKeyboardType : Swift.RawRepresentable {}
+extension KeyboardSDKCore.ENKeyboardState : Swift.Equatable {}
+extension KeyboardSDKCore.ENKeyboardState : Swift.Hashable {}
