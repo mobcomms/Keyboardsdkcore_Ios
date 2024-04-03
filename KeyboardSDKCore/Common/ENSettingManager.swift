@@ -2,7 +2,7 @@
 //  ENSettingManager.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/20.
+//  Created by cashwalkKeyboard on 2021/05/20.
 //
 
 import Foundation
@@ -72,26 +72,6 @@ public class ENSettingManager {
             UserDefaults.enKeyboardGroupStandard?.setHapticPower(power: newValue)
         }
     }
-    /// 자주쓰는 메모 가져오기
-    public var userMemo: [String] {
-        get {
-            return UserDefaults.enKeyboardGroupStandard?.getUserMemo() ?? []
-        }
-        
-        set {
-            UserDefaults.enKeyboardGroupStandard?.setUserMemo(memo: newValue)
-        }
-    }
-    /// 툴바 스타일 가져오기
-    public var toolbarStyle: ENToolbarStyle {
-        get {
-            return UserDefaults.enKeyboardGroupStandard?.getToolbarStyle() ?? .scroll
-        }
-        
-        set {
-            UserDefaults.enKeyboardGroupStandard?.setToolbarStyle(toolbarStyle: newValue)
-        }
-    }
     /// 툴바 아이템 array 가져오기
     public var toolbarItems: [ENToolbarItem] {
         get {
@@ -120,26 +100,6 @@ public class ENSettingManager {
         
         set {
             UserDefaults.enKeyboardGroupStandard?.setPressKeyboardCountDate(insertDate: newValue)
-        }
-    }
-    /// 뉴스 팝업 유무 가져오기
-    public var useNewsAd: Bool {
-        get {
-            return UserDefaults.enKeyboardGroupStandard?.getUseNewsAd() ?? false
-        }
-        
-        set {
-            UserDefaults.enKeyboardGroupStandard?.setUseNewsAd(isUsed: newValue)
-        }
-    }
-    /// 광고 팝업 유무 가져오기
-    public var useAd: Bool {
-        get {
-            return UserDefaults.enKeyboardGroupStandard?.getUseAd() ?? false
-        }
-        
-        set {
-            UserDefaults.enKeyboardGroupStandard?.setUseAd(isUsed: newValue)
         }
     }
     
@@ -176,15 +136,6 @@ public class ENSettingManager {
         }
     }
     
-    public var keyboardShowCount: Int {
-        get {
-            return UserDefaults.enKeyboardGroupStandard?.getShowRealKeyboard() ?? 0
-        }
-        
-        set {
-            UserDefaults.enKeyboardGroupStandard?.setShowRealKeyboard(index: newValue)
-        }
-    }
     
     public func getKeyboardHeight(isLandcape:Bool) -> CGFloat {
         if isLandcape {
@@ -194,35 +145,13 @@ public class ENSettingManager {
             return (308 * (CGFloat(100 + (keyboardHeightRate - 20)) * 0.01)) - 50
         }
     }
-
-    public func getKeyboardCustomHeightForDutchPay() -> CGFloat {
-        return 90
-    }
+    
     
     public func getKeyboardCustomHeight(isLandcape:Bool) -> CGFloat {
         if isLandcape {
             return 40
         }else{
             return 45
-        }
-    }
-
-    public var isUsePhotoTheme: Bool {
-        get {
-            return UserDefaults.standard.isUsePhotoTheme()
-        }
-        set {
-            UserDefaults.standard.setUsePhotoTheme(isUse: newValue)
-        }
-        
-    }
-    
-    public var photoThemeInfo: ENKeyboardTheme {
-        get {
-            return UserDefaults.standard.loadPhotoThemeInfo()
-        }
-        set {
-            UserDefaults.standard.savePhotoThemeInfo(theme: newValue)
         }
     }
     
@@ -237,7 +166,6 @@ public class ENSettingManager {
         }
     }
     
-    /** 하나머니 관련 로직 */
     /// 광고 IDFA getter & setter
     public var userIdfa: String {
         get {
@@ -270,18 +198,18 @@ public class ENSettingManager {
         }
     }
     
-    /// 하나머니 고객 ID getter & setter
-    public var hanaCustomerID: String {
+    /// 캐시워크 고객 ID getter & setter
+    public var customerID: String {
         get {
-            return UserDefaults.enKeyboardGroupStandard?.getHanaCustomerID() ?? ""
+            return UserDefaults.enKeyboardGroupStandard?.getCustomerID() ?? ""
         }
         
         set {
-            UserDefaults.enKeyboardGroupStandard?.setHanaCustomerID(customerID: newValue)
+            UserDefaults.enKeyboardGroupStandard?.setCustomerID(customerID: newValue)
         }
     }
     
-    /// 하나머니 키보드 3회 사용 카운트 값
+    /// 캐시워크 키보드 3회 사용 카운트 값
     /// - 초기값 0
     /// - 0 에서 시작 후 1, 2, 3 증가
     /// - 3 에서 api 호출 후 포인트 주고 성공 시 0 세팅
@@ -295,7 +223,7 @@ public class ENSettingManager {
         }
     }
     
-    /// 하나머니 키보드 3회 카운트 체크 시 flag 값
+    /// 캐시워크 키보드 3회 카운트 체크 시 flag 값
     /// - 초기값 true
     /// - 카운트 값이 0 에서 flag 값 체크 함
     /// - 이 값이 true 이면 카운트 값을 증가 후 false 로 바꿈
@@ -311,21 +239,21 @@ public class ENSettingManager {
         }
     }
     
-    /// 하나머니 포인트 적립을 위한 미리 쌓아두는 포인트
+    /// 캐시워크 포인트 적립을 위한 미리 쌓아두는 포인트
     /// - 해당 포인트는 실제로 적립된 포인트가 아님.
     /// - 상단 툴바에 포인트가 몇 쌓였는지 표시 해줄 때 사용함.
     /// - 상단 툴바에 포인트를 클릭 시 실제 포인트 적립 할 때 사용 될 값.
-    public var readyForHanaPoint: Int {
+    public var readyForPoint: Int {
         get {
-            return UserDefaults.enKeyboardGroupStandard?.getReadyForHanaPoint() ?? 0
+            return UserDefaults.enKeyboardGroupStandard?.getReadyForPoint() ?? 0
         }
         
         set {
-            UserDefaults.enKeyboardGroupStandard?.setReadyForHanaPoint(point: newValue)
+            UserDefaults.enKeyboardGroupStandard?.setReadyForPoint(point: newValue)
         }
     }
     
-    /// 하나머니 상단 툴바의 브랜드 url
+    /// 캐시워크 상단 툴바의 브랜드 url
     public var toolbarBrandUrl: String {
         get {
             return UserDefaults.enKeyboardGroupStandard?.getToolbarBrandUrl() ?? ""
@@ -336,7 +264,7 @@ public class ENSettingManager {
         }
     }
     
-    /// 하나머니 상단 툴바의 브랜드 이미지 url
+    /// 캐시워크 상단 툴바의 브랜드 이미지 url
     public var toolbarBrandImageUrl: String {
         get {
             return UserDefaults.enKeyboardGroupStandard?.getToolbarBrandImageUrl() ?? ""
@@ -367,7 +295,7 @@ public class ENSettingManager {
             UserDefaults.enKeyboardGroupStandard?.setToastMsg(msg: newValue)
         }
     }
-    /// 하나머니 API Server Type (true: 개발 | false: 상용)
+    /// 캐시워크 API Server Type (true: 개발 | false: 상용)
     /// - 값이 true 면 개발 서버
     /// - 값이 false 면 상용 서버
     /// - Defulat 값은 false 상용 서버

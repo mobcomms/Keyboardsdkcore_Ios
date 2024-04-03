@@ -2,7 +2,7 @@
 //  EN10KeyButtonView.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/09/09.
+//  Created by cashwalkKeyboard on 2021/09/09.
 //
 
 import Foundation
@@ -286,16 +286,22 @@ class EN10KeyButtonView: UIView {
         else {
             if original == "⇧" {
                 titleLabel.text = ""
-                iconImageView.image = keyboardTheme.keyShiftNormalImage
                 
+                var image = keyboardTheme.keyShiftNormalImage?.withRenderingMode(.alwaysTemplate)
+
+
                 if shiftButtonState != .normal {
-                    iconImageView.image = keyboardTheme.keyShiftPressedImage
+                    image = keyboardTheme.keyShiftPressedImage?.withRenderingMode(.alwaysTemplate)
                 }
                 
                 if shiftButtonState == .caps {
-                    iconImageView.image = keyboardTheme.keyCapslockImage
+                    image = keyboardTheme.keyCapslockImage?.withRenderingMode(.alwaysTemplate)
                     self.isSelected = true
                 }
+                iconImageView.image = image
+
+                iconImageView.tintColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text
+
             }
             if original == "🌐" && titleLabel.text != "한영"{
                 if needsInputModeSwitchKey {

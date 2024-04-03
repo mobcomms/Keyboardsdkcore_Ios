@@ -2,7 +2,7 @@
 //  ENKeyboardTheme.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/10.
+//  Created by cashwalkKeyboard on 2021/05/10.
 //
 
 import Foundation
@@ -117,41 +117,6 @@ extension ENKeyboardTheme {
         previewBackgroundImage = nil
     }
     
-    public func loadPhotoThemeIcons() {
-        var shiftNormalImage = UIImage.init(named: "paikbd_btn_keyboard_shift", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var shiftPressedImage = UIImage.init(named: "paikbd_btn_keyboard_shift_1", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var capslockImage = UIImage.init(named: "paikbd_btn_keyboard_shift_2", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var spaceImage = UIImage.init(named: "paikbd_btn_keyboard_space", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var specialImage = UIImage.init(named: "paikbd_btn_keyboard_sign", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var enterImage = UIImage.init(named: "paikbd_btn_keyboard_enter", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var deleteImage = UIImage.init(named: "paikbd_btn_keyboard_delete", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var globalImage = UIImage.init(named: "paikbd_btn_keyboard_text", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var previewImage = UIImage.init(named: "aikbd_btn_keyboard_preview", in: Bundle.frameworkBundle, compatibleWith: nil)
-        var emojiIcon = UIImage.init(named: "aikbd_btn_keyboard_icon", in: Bundle.frameworkBundle, compatibleWith: nil)
-        
-        
-        self.keyShiftNormalImage = shiftNormalImage
-        self.keyShiftPressedImage = shiftPressedImage
-        self.keyCapslockImage = capslockImage
-        self.keySpaceImage = spaceImage
-        self.keySpecialImage = specialImage
-        self.keyEnterImage = enterImage
-        self.keyDeleteImage = deleteImage
-        self.keyGlobalImage = globalImage
-        self.previewBackgroundImage = previewImage
-        self.keyEmojiIcon = emojiIcon
-        
-        shiftNormalImage = nil
-        shiftPressedImage = nil
-        capslockImage = nil
-        spaceImage = nil
-        specialImage = nil
-        enterImage = nil
-        deleteImage = nil
-        globalImage = nil
-        previewImage = nil
-        emojiIcon = nil
-    }
 }
 
 

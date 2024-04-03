@@ -2,7 +2,7 @@
 //  ENKoreanQwertyAutomata.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/06.
+//  Created by cashwalkKeyboard on 2021/05/06.
 //
 
 import Foundation

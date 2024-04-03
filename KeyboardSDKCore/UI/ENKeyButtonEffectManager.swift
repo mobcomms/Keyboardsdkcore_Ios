@@ -2,7 +2,7 @@
 //  ENKeyButtonEffectManager.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/31.
+//  Created by cashwalkKeyboard on 2021/05/31.
 //
 
 import Foundation

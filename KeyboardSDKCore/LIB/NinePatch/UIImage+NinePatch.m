@@ -120,68 +120,6 @@
     }
     
     
-//    NSArray* rgbaImage = [self getRGBAsFromImage:ninePatchImage atX:0 andY:0 count:ninePatchImage.size.width * ninePatchImage.size.height];
-//    NSArray* topBarRgba = [rgbaImage subarrayWithRange:NSMakeRange(1, ninePatchImage.size.width - 2)];
-//    NSMutableArray* leftBarRgba = [NSMutableArray arrayWithCapacity:0];
-//    int count = [rgbaImage count];
-//    for (int i = 0; i < count; i += ninePatchImage.size.width) {
-//        [leftBarRgba addObject:rgbaImage[i]];
-//    }
-//
-//    int top = -1, left = -1, bottom = -1, right = -1;
-//    count = [topBarRgba count];
-//    for (int i = 0; i <= count - 1; i++) {
-//        NSArray* aColor = topBarRgba[i];
-//        //        NSLog(@"topbar left color: %@,%@,%@,%@", aColor[0], aColor[1], aColor[2], aColor[3]);
-//        if ([aColor[3] floatValue] > 0) {
-//            left = i;
-//            break;
-//        }
-//    }
-//
-//    for (int i = count - 1; i >= 0; i--) {
-//        NSArray* aColor = topBarRgba[i];
-//        //        NSLog(@"topbar right color: %@,%@,%@,%@", aColor[0], aColor[1], aColor[2], aColor[3]);
-//        if ([aColor[3] floatValue] > 0) {
-//            right = i;
-//            break;
-//        }
-//    }
-//
-//    for (int i = left + 1; i <= right - 1; i++) {
-//        NSArray* aColor = topBarRgba[i];
-//        if ([aColor[3] floatValue] < 1) {
-//        }
-//    }
-//    count = [leftBarRgba count];
-//    for (int i = 0; i <= count - 1; i++) {
-//        NSArray* aColor = leftBarRgba[i];
-//
-//        if ([aColor[3] floatValue] > 0) {
-//            top = i;
-//            break;
-//        }
-//    }
-//
-//    for (int i = count - 1; i >= 0; i--) {
-//        NSArray* aColor = leftBarRgba[i];
-//        //        NSLog(@"leftbar bottom color: %@,%@,%@,%@", aColor[0], aColor[1], aColor[2], aColor[3]);
-//        if ([aColor[3] floatValue] > 0) {
-//            bottom = i;
-//            break;
-//        }
-//    }
-//
-//
-//    for (int i = top + 1; i <= bottom - 1; i++) {
-//        NSArray* aColor = leftBarRgba[i];
-//        if ([aColor[3] floatValue] == 0) {
-//        }
-//    }
-
-//    return [resizedImage resizableImageWithCapInsets:UIEdgeInsetsMake(top * rate, left * rate, bottom * rate, right * rate)];
-    
-    //키보드 SDK 전용으로 제작...  위 코드로 적용해야 하나, 부분적으로 이미지가 잘못 표시되는 문제가 있음. (없던 선이 생긴다거나.. 오른쪽과 하단이 짤려버린다거나....)
     UIImage* cropImage = [ninePatchImage cropBy:CGRectMake(1, 1, ninePatchImage.size.width - 2, ninePatchImage.size.height - 2)];
     
     CGSize resize = CGSizeMake(cropImage.size.width * rate, cropImage.size.height * rate);

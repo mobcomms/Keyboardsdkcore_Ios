@@ -45,7 +45,7 @@ enum ENActivityIndicatorShape {
     func layerWith(size: CGSize, color: UIColor) -> CALayer {
         let layer: CAShapeLayer = CAShapeLayer()
         var path: UIBezierPath = UIBezierPath()
-        let lineWidth: CGFloat = 2
+        let lineWidth: CGFloat = 8
 
         switch self {
         case .circle:
@@ -116,7 +116,7 @@ enum ENActivityIndicatorShape {
                         clockwise: false)
             layer.fillColor = nil
             layer.strokeColor = color.cgColor
-            layer.lineWidth = 2
+            layer.lineWidth = lineWidth
         case .rectangle:
             path.move(to: CGPoint(x: 0, y: 0))
             path.addLine(to: CGPoint(x: size.width, y: 0))

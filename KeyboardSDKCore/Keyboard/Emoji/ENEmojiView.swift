@@ -2,7 +2,7 @@
 //  ENEmojiView.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/06/14.
+//  Created by cashwalkKeyboard on 2021/06/14.
 //
 
 import Foundation
@@ -17,7 +17,7 @@ public protocol ENEmojiViewDelegate: AnyObject {
 public class ENEmojiView: UIView {
     
     let cellID: String = "ENEmojiViewCollectionCell"
-    
+    var keyboardTheme:ENKeyboardTheme = ENKeyboardTheme()
     let collectionView:UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
@@ -33,7 +33,8 @@ public class ENEmojiView: UIView {
         label.bottomInset = 0.0
         
         label.text = "smilels & people"
-        label.textColor = .white
+        
+        label.textColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text
         label.font = UIFont.systemFont(ofSize: 12.0, weight: .bold)
         
         return label
@@ -44,7 +45,7 @@ public class ENEmojiView: UIView {
         button.backgroundColor = .clear
         button.setTitle("ABC", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12.0)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text, for: .normal)
         
         return button
     }()
@@ -52,7 +53,9 @@ public class ENEmojiView: UIView {
     let backspaceButton:UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
-        button.setImage(UIImage.init(named: "aikbd_btn_keyboard_delete", in: Bundle.frameworkBundle, compatibleWith: nil), for: .normal)
+        let image = UIImage.init(named: "aikbd_btn_keyboard_delete", in: Bundle.frameworkBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text
         button.setTitle("", for: .normal)
         button.contentMode = .scaleAspectFit
         
@@ -82,7 +85,6 @@ public class ENEmojiView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(ENEmojiViewCell.self, forCellWithReuseIdentifier: cellID)
@@ -116,8 +118,7 @@ public class ENEmojiView: UIView {
         layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[emojiTitleLabel(18)]-0-[collectionView]-0-[buttonRootView(39)]|", metrics: nil, views: views)
         
         NSLayoutConstraint.activate(layoutConstraints)
-        
-        self.backgroundColor = .clear //UIColor.init(white: 0.8, alpha: 1.0)
+        self.backgroundColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.tab_off
         self.emojiTitleLabel.backgroundColor = .clear //.white
         self.collectionView.backgroundColor = .clear //.white
         self.buttonRootView.backgroundColor = .clear //UIColor.init(white: 0.8, alpha: 1.0)

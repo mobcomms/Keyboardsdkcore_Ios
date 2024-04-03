@@ -2,7 +2,7 @@
 //  ENKeyboardThemeManager.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/11.
+//  Created by cashwalkKeyboard on 2021/05/11.
 //
 
 import Foundation
@@ -33,13 +33,6 @@ public struct ENKeyboardThemeFileInfo {
     public var customUrl: String?
     
     
-    /// 기본 테마 파일을 로드한다. (임시)
-    /// - Returns: 기본 테마 파일 정보
-    static public func getDefaultTheme() -> ENKeyboardThemeFileInfo{
-        return ENKeyboardThemeFileInfo(name: "default",
-                                       keyboardUrl: "https://okcashbag.cashkeyboard.co.kr/images/theme/common/2/common_theme_118.zip",
-                                       customUrl: "https://okcashbag.cashkeyboard.co.kr/images/theme/OCB/2/custom_theme_118.zip")
-    }
 }
 
 
@@ -74,39 +67,11 @@ public class ENKeyboardThemeManager {
     ///   - theme: 테파 인포 객체
     ///   - handler: 테마 파일의 로딩이 완료된 경우 동작할 클로저
     public func loadTheme(theme: ENKeyboardThemeFileInfo, _ handler: ENKeyboardThemeManagerHandler?) {
-        if UserDefaults.standard.isUsePhotoTheme() {
-            loadPhotoTheme(theme: theme, handler)
-        }
-        else {
-            loadBasicTheme(theme: theme, handler)
-        }
-    }
-    
-    
-    
-    private func loadPhotoTheme(theme: ENKeyboardThemeFileInfo, _ handler: ENKeyboardThemeManagerHandler?) {
-        let photoTheme = UserDefaults.standard.loadPhotoThemeInfo()
         
-        DispatchQueue.global().async { [weak self] in
-            guard let self else { return }
-            self.loadedTheme?.clear()
-            self.loadedTheme = photoTheme
-            
-            self.loadedTheme?.isPhotoTheme = true
-            
-            var backgroundImage = self.getPhotoThemeBackgroundImage(theme: photoTheme)
-            self.loadedTheme?.backgroundImage = backgroundImage
-            
-            self.loadedTheme?.loadPhotoThemeIcons()
-            
-            backgroundImage = nil
-            
-            
-            DispatchQueue.main.async {
-                handler?(self.loadedTheme!)
-            }
-        }
+        loadBasicTheme(theme: theme, handler)
+        
     }
+    
     
     
     private func loadBasicTheme(theme: ENKeyboardThemeFileInfo, _ handler: ENKeyboardThemeManagerHandler?) {
@@ -281,8 +246,7 @@ extension ENKeyboardThemeManager {
         
         var resultLoadedKeyboardTheme: Bool = true
         var resultLCustomTheme: Bool = true
-        
-        
+    
         if let keyboardUrl = theme.keyboardUrl {
             loadedKeyboardTheme = false
             
@@ -376,7 +340,6 @@ extension ENKeyboardThemeManager {
         if let _ = url {
             url!.appendPathComponent("theme")
             url!.appendPathComponent(name)
-//            url!.appendPathComponent(type.rawValue)
             
             return url!
         }
@@ -441,7 +404,9 @@ extension ENKeyboardThemeManager {
         
         do {
             var destinationURL = downloadPath()
-            DHLogger.log("download at [\(destinationURL.absoluteString)]")
+            DHLogger.log("download at url : \(url)")
+
+            DHLogger.log("download at downloadPath [\(destinationURL.absoluteString)]")
             
             
             try FileManager.default.createDirectory(at: destinationURL, withIntermediateDirectories: true, attributes: nil)
@@ -516,126 +481,3 @@ extension ENKeyboardThemeManager {
 }
 
 
-
-//MARK:- 포토 테마 관련
-
-extension ENKeyboardThemeManager {
-    
-    func photoThemeDirectory() -> URL {
-        var url = ENKeyboardSDKCore.shared.groupDirectoryURL
-        if let _ = url {
-            url!.appendPathComponent("photoTheme")
-            url!.appendPathComponent("photoThemeBackground.png")
-            
-            return url!
-        }
-        else {
-            return URL.init(string: "")!
-        }
-        
-    }
-    
-    func photoThemePath() -> URL {
-        var url = photoThemeDirectory()
-        url.appendPathComponent("photoThemeBackground.png")
-        return url
-    }
-    
-    public func savePhotoThemeBackground(image:UIImage, complete: @escaping (_ success:Bool) -> ()) {
-        let saveUrl = photoThemePath()
-        
-        if FileManager.default.fileExists(atPath: saveUrl.path) {
-            do {
-                try FileManager.default.removeItem(atPath: saveUrl.path)
-            }
-            catch {
-                DHLogger.log("PhotoTheme Image Save - File remove error:\(error)")
-                complete(false)
-                
-                return
-            }
-        }
-        
-        if let data = image.pngData() {
-            do {
-                try FileManager.default.createDirectory(at: photoThemeDirectory(), withIntermediateDirectories: true, attributes: nil)
-                try data.write(to: saveUrl)
-                complete(true)
-            }
-            catch {
-                DHLogger.log("PhotoTheme Image Save - File save error:\(error)")
-                complete(false)
-            }
-        }
-    }
-    
-    func getPhotoThemeBackgroundImage(theme:ENKeyboardTheme) -> UIImage? {
-        let photoImage = UIImage.init(contentsOfFile: self.photoThemePath().path)
-        theme.backgroundImage = photoImage
-        
-        return croppedImageForPhotoTheme(theme: theme)
-    }
-    
-    
-    public func savePhotoTheme(with theme:ENKeyboardTheme, originImage:UIImage?, complete: @escaping (_ success:Bool) -> ()) {
-        if let origin = originImage {
-            self.savePhotoThemeBackground(image: origin) { success in
-                ENSettingManager.shared.isUsePhotoTheme = true
-                ENSettingManager.shared.photoThemeInfo = theme
-                
-                complete(success)
-            }
-        }
-        else {
-            complete(false)
-        }
-    }
-    
-    public func croppedImageForPhotoTheme(theme:ENKeyboardTheme) -> UIImage? {
-        var rect:CGRect = .zero
-        guard let photo = theme.backgroundImage else {
-            return nil
-        }
-        
-        let imageOffsetY = theme.imageOffsetY
-        let imageOffsetX = theme.imageOffsetX
-        let imageUseHeight = theme.imageUseHeight
-        let imageUseWidth = theme.imageUseWidth
-        
-        switch photo.imageOrientation {
-        case .left, .leftMirrored:
-            rect = CGRect.init(x: photo.size.height - (imageOffsetY + imageUseHeight),
-                               y: imageOffsetX,
-                               width: imageUseHeight,
-                               height: imageUseWidth)
-            break
-            
-        case .right, .rightMirrored:
-            rect = CGRect.init(x: imageOffsetY,
-                               y: photo.size.width - (imageOffsetX + imageUseWidth),
-                               width: imageUseHeight,
-                               height: imageUseWidth)
-            break
-            
-        case .down, .downMirrored:
-            rect = CGRect.init(x: imageOffsetX,
-                               y: photo.size.height - (imageOffsetY + imageUseHeight),
-                               width: imageUseWidth,
-                               height: imageUseHeight)
-            break
-        default:
-            rect = CGRect.init(x: imageOffsetX,
-                                   y: imageOffsetY,
-                                   width: imageUseWidth,
-                                   height: imageUseHeight)
-            break
-        }
-        
-        guard let imageRef: CGImage = photo.cgImage?.cropping(to: rect) else {
-            return nil
-        }
-        
-        return UIImage(cgImage: imageRef, scale: photo.scale, orientation: photo.imageOrientation)//.image(alpha: alpha)
-    }
-    
-}

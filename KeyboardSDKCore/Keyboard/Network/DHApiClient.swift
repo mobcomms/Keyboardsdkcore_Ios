@@ -20,7 +20,6 @@ public class DHApiClient {
     private func decodingTask<T: Codable>(with request: DHNetwork, decodingType: T.Type, completionHandler completion: @escaping (Codable?, DHApiError?) -> Void) -> URLSessionDataTask {
         
         let req = request.request(with: DHApi.baseURL)
-        
         let task = URLSession.shared.dataTask(with: req) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(nil, .requestFailed)

@@ -2,7 +2,7 @@
 //  UserDefaults+ENKeyboard+Group.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/17.
+//  Created by cashwalkKeyboard on 2021/05/17.
 //
 
 import Foundation
@@ -18,25 +18,20 @@ enum ENKeyboardGroupUserDefaultsConstants: String {
     case keyForKeyboardHeightRate           = "keyForKeyboardHeightRate"
     case keyForUsePhotoTheme                = "keyForUsePhotoTheme"
     case keyPhotoThemeInfo                  = "keyPhotoThemeInfo"
-    case keyKeyboardType                    = "keyKeyboardType" // 이것도 지워야함
-    case keyToolbarArray                    = "keyToolbarArray" // 지워야함
+    case keyKeyboardType                    = "keyKeyboardType"
+    case keyToolbarArray                    = "keyToolbarArray"
     case keyHapticPower                     = "keyHapticPower"
-    case keyUserMemo                        = "keyUserMemo"
-    case keyToolbarStyle                    = "keyToolbarStyle"
     case keyToolbarItemArray                = "keyToolbarItemArray"
-    case keyUseNewsAd                       = "keyUseNewsAd"
-    case keyUseAd                           = "keyUseAd"
     case keyPressKeyboardCount              = "keyPressKeyboardCount"
     case keyPressKeyboardCountDate          = "keyPressKeyboardCountDate"
-    case keyShowRealKeyboard                = "keyShowRealKeyboard"
     case keyIsFirstUser                     = "keyIsFirstUser"
     case keyIDFA                            = "keyIDFA"
     case keyPPZToken                        = "keyPPZToken"
     case keyFirstUsingKeyboard              = "keyFirstUsingKeyboard"
-    case keyHanaCustomerID                  = "keyHanaCustomerID"
+    case keyCustomerID                      = "keyCustomerID"
     case keyUsingKeyboardCnt                = "keyUsingKeyboardCnt"
     case keyUsingKeyboardCntFlag            = "keyUsingKeyboardCntFlag"
-    case keyReadyForHanaPoint               = "keyReadyForHanaPoint"
+    case keyReadyForPoint                   = "keyReadyForPoint"
     case keyToolbarBrandUrl                 = "keyToolbarBrandUrl"
     case keyToolbarBrandImageUrl            = "keyToolbarBrandImageUrl"
     case keyBrandUtilDay                    = "keyBrandUtilDay"
@@ -81,44 +76,7 @@ public extension UserDefaults {
         return UserDefaults.enKeyboardGroupStandard?.value(forKey: key.value)
     }
     
-    
-    
-    /// 포토 테마 사용여부를 가져온다
-    /// - Returns: 포토테마를 사용하는 경우 true, 그 외의 경우 false
-    func isUsePhotoTheme() -> Bool {
-        return value(forKey: .keyForUsePhotoTheme) as? Bool ?? false
-    }
-    
-    
-    /// 포토 테마 사용 여부를 저장한다.
-    /// - Parameter isUse: 포토 테마 사용 여부에 대한 boolean 값
-    func setUsePhotoTheme(isUse:Bool) {
-        setValue(isUse, key: .keyForUsePhotoTheme)
-    }
-    
-    
-    
-    /// 포토 테마 정보를 저장한다
-    /// - Parameter theme: 사용중인 포토테마 정보
-    func savePhotoThemeInfo(theme:ENKeyboardTheme) {
-        let photoJSON = theme.convertPhotoThemeToJsonString()
-        setValue(photoJSON, key: .keyForThemeInfo)
-    }
-    
-    
-    /// 저장된 포토테마 정보를 가져온다.
-    /// - Returns: 저장된 포토테마 정보
-    func loadPhotoThemeInfo() -> ENKeyboardTheme {
-        let photoJson = value(forKey: .keyForThemeInfo) as? String ?? ""
-        
-        let theme = ENKeyboardTheme.init()
-        theme.parsePhotoThemeFrom(json: photoJson)
-        
-        return theme
-    }
-    
-    
-    
+  
     
     /// 사용을 설정한 Theme에 대한 정보를 저장한다
     /// - Parameter theme: 선택된 Theme 정보를 가진 ENKeyboardThemeModel 객체
@@ -169,14 +127,6 @@ public extension UserDefaults {
     func getHapticPower() -> Int {
         return ((value(forKey: .keyHapticPower) as? Int) ?? 0)
     }
-    /// 자주 사용하는 메모 데이터 세팅
-    func setUserMemo(memo: [String]) {
-        setValue(memo, key: .keyUserMemo)
-    }
-    /// 자주 사용하는 메모 가져옴
-    func getUserMemo() -> [String] {
-        return ((value(forKey: .keyUserMemo) as? [String]) ?? [])
-    }
     /// 타이핑 세팅
     func setPressKeyboardCount(pressCount: Int) {
         setValue(pressCount, key: .keyPressKeyboardCount)
@@ -192,22 +142,6 @@ public extension UserDefaults {
     /// 타이핑 세팅한 날짜 가져오기
     func getPressKeyboardCountDate() -> String {
         return ((value(forKey: .keyPressKeyboardCountDate) as? String) ?? DHUtils.getNowDateToString())
-    }
-    /// 뉴스 팝업 쓸지 가져옴
-    func getUseNewsAd() -> Bool {
-        return (value(forKey: .keyUseNewsAd) as? Bool) ?? false
-    }
-    /// 뉴스 팝업 쓸지 세팅함
-    func setUseNewsAd(isUsed: Bool) {
-        setValue(isUsed, key: .keyUseNewsAd)
-    }
-    /// 광고 팝업 쓸지 가져옴
-    func getUseAd() -> Bool {
-        return (value(forKey: .keyUseAd) as? Bool) ?? false
-    }
-    /// 광고 팝업 쓸지 세팅함
-    func setUseAd(isUsed: Bool) {
-        setValue(isUsed, key: .keyUseAd)
     }
     
     /// 키보드 자판 터치시 진동 사용 여부에 대해 저장된 값을 가져온다.
@@ -270,25 +204,7 @@ public extension UserDefaults {
     func getKeyboardType() -> ENKeyboardType {
         let value = (value(forKey: .keyKeyboardType) as? Int)
         return ENKeyboardType(rawValue: value ?? 0) ?? .qwerty
-    }
-    /// 툴바 스타일 세팅
-    func setToolbarStyle(toolbarStyle: ENToolbarStyle) {
-        setValue(toolbarStyle.rawValue, key: .keyToolbarStyle)
-    }
-    /// 툴바 스타일 가져오기
-    func getToolbarStyle() -> ENToolbarStyle {
-        let value = (value(forKey: .keyToolbarStyle) as? Int)
-        return ENToolbarStyle(rawValue: value ?? 0) ?? .scroll
-    }
-    
-    /// 키보드가 몇번 올라왔는지 세팅함
-    func setShowRealKeyboard(index: Int) {
-        setValue(index, key: .keyShowRealKeyboard)
-    }
-    /// 키보드가 몇번 올라왔는지 가져옴
-    func getShowRealKeyboard() -> Int {
-        return (value(forKey: .keyShowRealKeyboard) as? Int) ?? 0
-    }
+    }    
     
     /// 처음 사용인지 세팅
     ///  - false = 처음이 아님
@@ -346,41 +262,26 @@ public extension UserDefaults {
         return defaultToolbarItmes()
     }
     /// 디폴트로 설정함
+    /// 0207 툴바 아이템 설정하는쪽
     private func defaultToolbarItmes() -> [ENToolbarItem] {
         let toolbarArray: [ENToolbarItem] = [
-            ENToolbarItem.init(toolbarType: "1", displayName: "모비컴즈", imgName: "cell_toolbar_mobicomz", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "2", displayName: "이모지", imgName: "cell_toolbar_emoji", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "3", displayName: "이모티콘", imgName: "cell_toolbar_emoticon", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "4", displayName: "자주쓰는 메모", imgName: "cell_toolbar_memo", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "5", displayName: "클립보드", imgName: "cell_toolbar_clipboard", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "6", displayName: "쿠팡 바로가기", imgName: "cell_toolbar_coupang", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "7", displayName: "오퍼월", imgName: "cell_toolbar_opewarl", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "8", displayName: "더치페이", imgName: "cell_toolbar_pay", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "9", displayName: "핫이슈", imgName: "cell_toolbar_hot", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "10", displayName: "커서이동/좌", imgName: "cell_toolbar_left", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "11", displayName: "커서이동/우", imgName: "cell_toolbar_right", isUsed: "N"),
-            ENToolbarItem.init(toolbarType: "12", displayName: "설정", imgName: "cell_toolbar_setting", isUsed: "N"),
-            
-            ENToolbarItem.init(toolbarType: "31", displayName: "하나머니 이모지", imgName: "hana_toolbar_emoji", isUsed: "Y"),
-            ENToolbarItem.init(toolbarType: "32", displayName: "하나머니 앱", imgName: "hana_toolbar_app", isUsed: "Y"),
-            ENToolbarItem.init(toolbarType: "33", displayName: "하나머니 PP존", imgName: "hana_toolbar_ppzone", isUsed: "Y"),
-            ENToolbarItem.init(toolbarType: "34", displayName: "하나머니 쿠팡", imgName: "hana_toolbar_coupang", isUsed: "Y"),
-            ENToolbarItem.init(toolbarType: "35", displayName: "하나머니 적립 내역", imgName: "hana_toolbar_point_list", isUsed: "Y"),
-            ENToolbarItem.init(toolbarType: "36", displayName: "하나머니 설정", imgName: "hana_toolbar_setting", isUsed: "Y"),
-            
+          
+            ENToolbarItem.init(toolbarType: "31", displayName: "캐시워크 이모지", imgName: "cashwalk_toolbar_emoji", isUsed: "Y"),
+            ENToolbarItem.init(toolbarType: "37", displayName: "캐시워크 캐시딜", imgName: "cashwalk_toolbar_cashdeal", isUsed: "Y"),
+            ENToolbarItem.init(toolbarType: "32", displayName: "캐시워크 앱", imgName: "cashwalk_toolbar_app", isUsed: "Y"),
+            ENToolbarItem.init(toolbarType: "33", displayName: "캐시워크 PP존", imgName: "cashwalk_toolbar_ppzone", isUsed: "Y"),
+            ENToolbarItem.init(toolbarType: "34", displayName: "캐시워크 쿠팡", imgName: "cashwalk_toolbar_coupang", isUsed: "Y"),
+//            ENToolbarItem.init(toolbarType: "35", displayName: "캐시워크 적립 내역", imgName: "cashwalk_toolbar_point_list", isUsed: "Y"),
+            ENToolbarItem.init(toolbarType: "36", displayName: "캐시워크 설정", imgName: "cashwalk_toolbar_setting", isUsed: "Y"),
+
         ]
         setToolbar(toolbarArray: toolbarArray)
         return toolbarArray
     }
     
     
-    /** 하나 머니 관련 로직 */
-    /** 하나 머니 관련 로직 */
-    /** 하나 머니 관련 로직 */
-    /** 하나 머니 관련 로직 */
-    /** 하나 머니 관련 로직 */
     
-    /// 하나머니 API Server Type (true: 개발 | false: 상용)
+    /// 캐시워크 API Server Type (true: 개발 | false: 상용)
     func setIsDebug(isDebug: Bool) {
         setValue(isDebug, key: .keyAPIServerType)
     }
@@ -414,43 +315,43 @@ public extension UserDefaults {
         setValue(isFlag, key: .keyFirstUsingKeyboard)
     }
     
-    /// 하나머니 고객 아이디 세팅
-    func setHanaCustomerID(customerID: String) {
-        setValue(customerID, key: .keyHanaCustomerID)
+    /// 캐시워크 고객 아이디 세팅
+    func setCustomerID(customerID: String) {
+        setValue(customerID, key: .keyCustomerID)
     }
-    /// 하나머니 고객 아이디 가져오기
-    func getHanaCustomerID() -> String {
-        return ((value(forKey: .keyHanaCustomerID) as? String) ?? "")
+    /// 캐시워크 고객 아이디 가져오기
+    func getCustomerID() -> String {
+        return ((value(forKey: .keyCustomerID) as? String) ?? "")
     }
     ///  광고배너 토스트 메시지 가져오기
     func getToastMsg() -> String {
         return ((value(forKey: .keyZoneToastMsg) as? String) ?? "")
     }
-    /// 하나머니 키보드 3회 썻는지 카운트 세팅 (시작값 0 으로 할거임! 그 뒤로 1 2 3 증가! 3에서 포인트 주고 0 만들기)
+    /// 캐시워크 키보드 3회 썻는지 카운트 세팅 (시작값 0 으로 할거임! 그 뒤로 1 2 3 증가! 3에서 포인트 주고 0 만들기)
     func setUsingKeyboardCnt(cnt: Int) {
         setValue(cnt, key: .keyUsingKeyboardCnt)
     }
-    /// 하나머니 키보드 3회 썻는지 카운트 가져오기 (시작값 0 으로 할거임! 그 뒤로 1 2 3 증가! 3에서 포인트 주고 0 만들기)
+    /// 캐시워크 키보드 3회 썻는지 카운트 가져오기 (시작값 0 으로 할거임! 그 뒤로 1 2 3 증가! 3에서 포인트 주고 0 만들기)
     func getUsingKeyboardCnt() -> Int {
         return ((value(forKey: .keyUsingKeyboardCnt) as? Int) ?? 0)
     }
     
-    /// 하나머니 키보드 3회 카운팅 구분하기 위한 값 (0 -> 1로 증가 후 이 값을 바꿔서 더이상 증가 안하게 함! 단 키보드가 viewWillDisappear 되면 이 값을 다시 바꿈
+    /// 캐시워크 키보드 3회 카운팅 구분하기 위한 값 (0 -> 1로 증가 후 이 값을 바꿔서 더이상 증가 안하게 함! 단 키보드가 viewWillDisappear 되면 이 값을 다시 바꿈
     func setUsingKeyboardCntFlag(cntFlag: Bool) {
         setValue(cntFlag, key: .keyUsingKeyboardCntFlag)
     }
-    /// 하나머니 키보드 3회 카운팅 구분하기 위한 값 (0 -> 1로 증가 후 이 값을 바꿔서 더이상 증가 안하게 함! 단 키보드가 viewWillDisappear 되면 이 값을 다시 바꿈
+    /// 캐시워크 키보드 3회 카운팅 구분하기 위한 값 (0 -> 1로 증가 후 이 값을 바꿔서 더이상 증가 안하게 함! 단 키보드가 viewWillDisappear 되면 이 값을 다시 바꿈
     func getUsingKeyboardCntFlag() -> Bool {
         return ((value(forKey: .keyUsingKeyboardCntFlag) as? Bool) ?? true)
     }
     
-    /// 하나머니 포인트 쌓는 카운트 (이건 포인트가 실제 적립된게 아님!!!)
-    func setReadyForHanaPoint(point: Int) {
-        setValue(point, key: .keyReadyForHanaPoint)
+    /// 캐시워크 포인트 쌓는 카운트 (이건 포인트가 실제 적립된게 아님!!!)
+    func setReadyForPoint(point: Int) {
+        setValue(point, key: .keyReadyForPoint)
     }
-    /// 하나머니 포인트 쌓는 카운트 (이건 포인트가 실제 적립된게 아님!!!)
-    func getReadyForHanaPoint() -> Int {
-        return ((value(forKey: .keyReadyForHanaPoint) as? Int) ?? 0)
+    /// 캐시워크 포인트 쌓는 카운트 (이건 포인트가 실제 적립된게 아님!!!)
+    func getReadyForPoint() -> Int {
+        return ((value(forKey: .keyReadyForPoint) as? Int) ?? 0)
     }
     
     /// 상단 툴바의 쿠팡 및 브랜드 광고 url

@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/KeyboardSDKCore.h</key>
 		<data>
-		0zzuTIlaMjtZrjDs2EP2D2vYHno=
+		7C9krrZ2NB4zgiqKmdpMxTbXgBM=
 		</data>
 		<key>Headers/UIImage+NinePatch.h</key>
 		<data>
@@ -18,47 +18,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IL0h2RahlhUYR+l212TmNQyQ3lc=
+		H8Ys5iQN7X953Bks4sPMXNMuyDU=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		m2wMyrdn7oZq9HQV6F1f56/mq+I=
+		vBDxSg/FrmkqX83qhAXQkA+1bT8=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		tz1D0gNhwt2D96dro27gzp6g9m8=
+		3G1hqRkZUPeL7zo2JKp1L+j49O4=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		rpyGJsiaheUGV4MYjiuMZKYdLu4=
+		a7yYMzS33rWZKX6gJ+5aCq18Lqk=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		tz1D0gNhwt2D96dro27gzp6g9m8=
+		3G1hqRkZUPeL7zo2JKp1L+j49O4=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		PhLdTTFKQiNMgHic/b7SfKb4Hy8=
+		KdG5rSdE936eiONOxmtDWpi6fcE=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		m2wMyrdn7oZq9HQV6F1f56/mq+I=
+		vBDxSg/FrmkqX83qhAXQkA+1bT8=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		93bTb7teAe9Zuad/r22NDOxpdxo=
+		z9y80NhBs9f8SjxjoYLuSTj2Ioc=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		YQHJj8EMTb7IhpHoCZMgaLYhF0c=
+		PAtof8D4lLWgAMFWZtw65JdxCXI=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		93bTb7teAe9Zuad/r22NDOxpdxo=
+		z9y80NhBs9f8SjxjoYLuSTj2Ioc=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8VvzEmzeYVpmIRuoP+r/B/1g8RI=
+		cM5zQBw5ftUQUOTD8Db9FUSQ+TE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -90,7 +90,11 @@
 		</data>
 		<key>aikbd_btn_emoticon_latest@3x.png</key>
 		<data>
-		PoUIrePeS6jmLLjKt6/Nu0zqlso=
+		p17HQdUU7JxLJr8LbkT50Jw2m18=
+		</data>
+		<key>aikbd_btn_keyboard_bookmark@3x.png</key>
+		<data>
+		NqRZe9739962yt2fhsFMOGM9C2o=
 		</data>
 		<key>aikbd_btn_keyboard_cash@3x.png</key>
 		<data>
@@ -102,15 +106,19 @@
 		</data>
 		<key>aikbd_btn_keyboard_delete@3x.png</key>
 		<data>
-		hVKyPEfl3o9Yk5P9E/UAp+tXCuc=
+		futozVW0qJUW3Urw39XHyNrwrV4=
+		</data>
+		<key>aikbd_btn_keyboard_emoticon@3x.png</key>
+		<data>
+		GH2rJLXsItt2FlJ9iDt39m8N0h8=
 		</data>
 		<key>aikbd_btn_keyboard_enter@3x.png</key>
 		<data>
-		LoqDOpZCoAAlFt7gLzYgLWpEJxw=
+		5/KKedZMNf6hfHzVc3mLPv9nl9w=
 		</data>
 		<key>aikbd_btn_keyboard_icon@3x.png</key>
 		<data>
-		Hw5bokuoQL0GyW0nSQA2SVM8hvU=
+		Oi13iqSkE1sKZdPZFC8frcOW920=
 		</data>
 		<key>aikbd_btn_keyboard_icon_1@3x.png</key>
 		<data>
@@ -118,15 +126,23 @@
 		</data>
 		<key>aikbd_btn_keyboard_key_off.9.png</key>
 		<data>
-		2NAwRtzlAKsWzrdMnu5zrFI7dpo=
+		yNxugQzNT4PT8XTyeu7nXrPiaV0=
 		</data>
 		<key>aikbd_btn_keyboard_key_on.9.png</key>
 		<data>
-		RLuHq/D0yQrW+9yU3hWgVasj1Y8=
+		D0MG6jujk/Vy9nq5pLd2PEYcvJA=
 		</data>
 		<key>aikbd_btn_keyboard_logo@3x.png</key>
 		<data>
 		vHIxywAc+702NwJL+KzD8OyqE0A=
+		</data>
+		<key>aikbd_btn_keyboard_memo@3x.png</key>
+		<data>
+		umQHRp7kdK3cLrUJkURg1ObbRNc=
+		</data>
+		<key>aikbd_btn_keyboard_memo_on@3x.png</key>
+		<data>
+		gNLwb2Km6HI9yly5HTZJ5LWpC2w=
 		</data>
 		<key>aikbd_btn_keyboard_notice@3x.png</key>
 		<data>
@@ -134,43 +150,51 @@
 		</data>
 		<key>aikbd_btn_keyboard_preview@3x.png</key>
 		<data>
-		76Uf6WwI5KrR0RU3F+mlC3wdwlU=
+		FabO1fIFHqco0mfu8tN2/RcMf/4=
 		</data>
 		<key>aikbd_btn_keyboard_search@3x.png</key>
 		<data>
 		cO5dCqjiDFXlP86wbmwnJKMuQCM=
 		</data>
+		<key>aikbd_btn_keyboard_setting@3x.png</key>
+		<data>
+		+IFKstCKWh/ODn9NSVsUlsDeq/Y=
+		</data>
 		<key>aikbd_btn_keyboard_shift@3x.png</key>
 		<data>
-		g22B6LJw8DQjUoIuILiwDAqQrVA=
+		AAZni/vAviFwnQ2GYLtUYyXZRBs=
 		</data>
 		<key>aikbd_btn_keyboard_shift_1@3x.png</key>
 		<data>
-		anETAUY2eAgdSJYLfMeexT8TtAw=
+		Vr8tpx1FzngqjjGWyMzVAkRDelc=
 		</data>
 		<key>aikbd_btn_keyboard_shift_2@3x.png</key>
 		<data>
-		qi5iO6eOzOVN0+4wogp2eFYjwFo=
+		Gzn0K4kAjbQn0vR30mF3/n4flvU=
 		</data>
 		<key>aikbd_btn_keyboard_sign@3x.png</key>
 		<data>
-		ZU9xk/kfCSE/fGUzH6dxNnCunC0=
+		nNIhujGEwbzGH93Qz+L0Vy15aNg=
 		</data>
 		<key>aikbd_btn_keyboard_space@3x.png</key>
 		<data>
-		e6EyLxkvCrgifqA9hoteLeUeScA=
+		JQdZcVMHWuZftwYUHlit8/lwLUM=
 		</data>
 		<key>aikbd_btn_keyboard_specialkey_off.9.png</key>
 		<data>
-		o0j06qiQYGSA8vyzgZXPHpYigUY=
+		3CJsAkHPtd9hSdlOwwIsqtwWpTw=
 		</data>
 		<key>aikbd_btn_keyboard_specialkey_on.9.png</key>
 		<data>
-		w5wGdGVmDcToKcymWUxFzLvwoWs=
+		sj9gha7nfbPASdiC+9Rcf60/yCQ=
 		</data>
 		<key>aikbd_btn_keyboard_text@3x.png</key>
 		<data>
-		9p3b6OfF9zUjFh4VF2U4Ka1d7e8=
+		aQkrRxwApHli9Eea+Ift7UK2r/c=
+		</data>
+		<key>aikbd_btn_keyboard_text_2@3x.png</key>
+		<data>
+		XBpBi8PWkfdqKuieN2z9GkCrIKc=
 		</data>
 		<key>aikbd_btn_memo_addition@3x.png</key>
 		<data>
@@ -206,11 +230,11 @@
 		</data>
 		<key>aikbd_img_keyboard_bg@3x.png</key>
 		<data>
-		E8BwGb2Q9zrJHg5/hB68HgUPL5s=
+		g3kcBrgXp76OZIyLl8OQLWRB/GY=
 		</data>
 		<key>aikbd_img_keyboard_bg_origin@3x.png</key>
 		<data>
-		PD/2xyplPAJTZR/JpHS4hDq9C3U=
+		eMoyGKCGewLCnv7rM5MY8J6i8gA=
 		</data>
 		<key>aikbd_sound0.wav</key>
 		<data>
@@ -232,73 +256,13 @@
 		<data>
 		yzcJ1rNai05h36h5+zt4SMbKdww=
 		</data>
-		<key>paikbd_btn_keyboard_bookmark@3x.png</key>
+		<key>kb_kb_theme_img_01_basic@3x.png</key>
 		<data>
-		iCjHbnVt1MSjlPyjh8btu5C6whc=
-		</data>
-		<key>paikbd_btn_keyboard_delete@3x.png</key>
-		<data>
-		9dDUkLkpZNhZ/RQut5xSpABMgHs=
-		</data>
-		<key>paikbd_btn_keyboard_emoticon@3x.png</key>
-		<data>
-		30ykOCo2+3s5Mrd6GyRVnCmrw8Y=
-		</data>
-		<key>paikbd_btn_keyboard_enter@3x.png</key>
-		<data>
-		7IsbIEwiRoh0KCD1EOkchT29KzU=
-		</data>
-		<key>paikbd_btn_keyboard_icon@3x.png</key>
-		<data>
-		+OnGSBz4zptmw9gcaN2rlul6Arc=
-		</data>
-		<key>paikbd_btn_keyboard_icon_1@3x.png</key>
-		<data>
-		v7+2gGJHE3DE83Hv6ATkUxc0ZjQ=
-		</data>
-		<key>paikbd_btn_keyboard_memo@3x.png</key>
-		<data>
-		v7H30oY4obyvTxjHVDRQ6Wi/DUw=
-		</data>
-		<key>paikbd_btn_keyboard_memo_on@3x.png</key>
-		<data>
-		y6lK6hJJBTL396jXPOukclgCRfo=
-		</data>
-		<key>paikbd_btn_keyboard_search@3x.png</key>
-		<data>
-		WKrIWRgDN0vgBI2n1YTYpjofHsE=
-		</data>
-		<key>paikbd_btn_keyboard_setting@3x.png</key>
-		<data>
-		ShhVVNMs/pEnZo9z6vmz2cdzZ7U=
-		</data>
-		<key>paikbd_btn_keyboard_shift@3x.png</key>
-		<data>
-		tfkWAR+GWkR6ZEz7mxvPu+cLZ0w=
-		</data>
-		<key>paikbd_btn_keyboard_shift_1@3x.png</key>
-		<data>
-		qLaOVkDcr8h407l80KJiYXyBDFM=
-		</data>
-		<key>paikbd_btn_keyboard_shift_2@3x.png</key>
-		<data>
-		HWqrv9NugrgJmeiO7+vRQtcoedA=
-		</data>
-		<key>paikbd_btn_keyboard_sign@3x.png</key>
-		<data>
-		37vHUdd5m/GugrYiMZDUDHmajyw=
-		</data>
-		<key>paikbd_btn_keyboard_space@3x.png</key>
-		<data>
-		+ISX4OvWht9nZD0xnIWzO5ToPJk=
-		</data>
-		<key>paikbd_btn_keyboard_text@3x.png</key>
-		<data>
-		6QEFFBpUMBTDhobDYKzDoF/k9uQ=
+		EOnfX7qvkIZndxqg3qKzPLkrAFA=
 		</data>
 		<key>theme_color.txt</key>
 		<data>
-		qcnwCHjLV5t1y5CxDPU7ZApCNro=
+		JSuNu+XILjnV1vvEhOnflyns7f0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -314,7 +278,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4rrb92Wo6F2QvhvgP4K7j5GTMinGMSbJPl6LxXyd4HE=
+			EOVZSfW3jWxnS9KlIjCMt8NwH6ygpChzhVcjreHVyyA=
 			</data>
 		</dict>
 		<key>Headers/UIImage+NinePatch.h</key>
@@ -328,70 +292,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1yQrBUVOuiMpgC+3HeKkubxKsfK+17lNjyH42wI+sGY=
+			/6hSA05ou4WlFZWvK/Cx7YByUBFhXW0UhoSDFQYdXhk=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fkoKB5b1TEFX5Y47Wz4okynPlW+6qjxofAOS6mVCays=
+			itIPJXlM5+0vytiBoyAb2WSh9FLWXqF9xH1pLnoYyZY=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jduB2JJPOolKqtD2VQ5x6PVU378JTyJokJz2Vi+3Mhw=
+			AvV0JgRdRL4sVUPHqpr/jOMRyUWJwWcUCN197/lbrR8=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fkoKB5b1TEFX5Y47Wz4okynPlW+6qjxofAOS6mVCays=
+			itIPJXlM5+0vytiBoyAb2WSh9FLWXqF9xH1pLnoYyZY=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N84JXIaP/1IXqNhpcuWgEh6hkmDlmHPx5EoeNkmEFFU=
+			GtcA7148EwL1KmjoEYOL5UVlbfE12e407LdfNgZIRAw=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1yQrBUVOuiMpgC+3HeKkubxKsfK+17lNjyH42wI+sGY=
+			/6hSA05ou4WlFZWvK/Cx7YByUBFhXW0UhoSDFQYdXhk=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pkUUJbOvHVF1p4uDVdMzYCtZIcZTmgX7+eRaoVhKHf0=
+			Cw41Xjixl4yf9uq+SWTNogMrWEWdeyFNFNtPXxh1K+o=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+QWJFPno8rEblK+c83h2xLWuSkXOynNSUQyjNkBBqiU=
+			2ciNotZKXPGU5qhPIsa47Hch3CjSXfepXF5YmAyH7Sw=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pkUUJbOvHVF1p4uDVdMzYCtZIcZTmgX7+eRaoVhKHf0=
+			Cw41Xjixl4yf9uq+SWTNogMrWEWdeyFNFNtPXxh1K+o=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l34e8mBxP1A9viPNrNGeG4JvczpYd+7hoW3KMiCpJiU=
+			i9fTbRD/t6DMomKveCXeTRxyWszU4Uw5diHJdTQtD5o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -447,7 +411,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TOZip3cK/urUKzjYfyLlmm7EWEMwI3F73pxL3X41whQ=
+			3Unf8HwXqrZBNYcvFvRQ+RAJTIBXZoi/eGUAAUF0TF0=
+			</data>
+		</dict>
+		<key>aikbd_btn_keyboard_bookmark@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ndYDs7epJYWQPu7YbiPCX+OnqswhXQTIuLVKmok9Nps=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_cash@3x.png</key>
@@ -468,21 +439,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xTESKKdvZJNfCKb3OmoNTbwEMtm31C39IK0Di6JZwa4=
+			8CzGvQrNA/mayN/WNoarOBonhi2N+qVmPx0Ks8YhI/Y=
+			</data>
+		</dict>
+		<key>aikbd_btn_keyboard_emoticon@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yXezQtE6ip55s92J7gc6Ix0Ix+j7t+QfvnmWPvTOvVM=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_enter@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+SZnC2hGDo639BAYrmBNKIRT3iXCkxI1Cae0Uex5CTw=
+			DEjX6EySu10DX9DxWWldmO03yiq+MGZDb93GEuku2x4=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_icon@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KJGR1YftmyS1eHjoNclZhzzgPQZor8XvOXW7AU8ZcI8=
+			eHSO6oeXzM22MkdMvHxCo33AodsfnOXEoKVKE4GJfg4=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_icon_1@3x.png</key>
@@ -496,14 +474,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LkMb9BrQvwXt6xmGvY1IRIoQVFteBlTdGDKaw1ZpA3Y=
+			hb321/6BKSEjURb2ocId98VNBw6mOXHLiM1eefI2ieQ=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_key_on.9.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9NbLO4E6AIUevlTaGHx/PZ8zoP27jbXwwN/1yJmTo/s=
+			sa7CFxFSc5tXNAnOrqO7oE/EalFccQWv7RGIyq4ezz4=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_logo@3x.png</key>
@@ -511,6 +489,20 @@
 			<key>hash2</key>
 			<data>
 			WHXLgp7HaRv7lRLD9APzcEk79P7Rxl3REANqiQel4Fw=
+			</data>
+		</dict>
+		<key>aikbd_btn_keyboard_memo@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TQCpFBR8BJzjSUSWhI4Pb7mC3BOBXSkQD5aDg3CAEp0=
+			</data>
+		</dict>
+		<key>aikbd_btn_keyboard_memo_on@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2Oon6z/MZdmT7NN7nJnst1iytlvnG+33rZaaRPaHAkQ=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_notice@3x.png</key>
@@ -524,7 +516,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mrvvpa6FnkljfIIfiP9Cq5gkaJXbXSj2/q7N7+IQKMM=
+			69d7e10jrWcXn1Yj5TIHFOWSsNdAyoBSlM7c+wrMXUY=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_search@3x.png</key>
@@ -534,60 +526,74 @@
 			4SROpNzZicLnMhdbKvZVO34CEFbjakJp12WaCfFnleE=
 			</data>
 		</dict>
+		<key>aikbd_btn_keyboard_setting@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6Kstu7lfqWn13XX/lpYAttIMjJRVNi3gQehMLpuH1lQ=
+			</data>
+		</dict>
 		<key>aikbd_btn_keyboard_shift@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kiYE7GgryMUHpsaPs0WqrYLRw4JaGWpvBbdlvjk/PFU=
+			VigIxQxQLomYjQ0Ry4psu4O/xR/DLrviSLyzfbkP/Vk=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_shift_1@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5r3gPTXNyvaxdKd9z6BGtNJDmDCIMT3k/4PHA/yR2Bk=
+			80wKsTvBMaNrAwO2F3qj8i9VWo51pRoFeEISdk/FRTE=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_shift_2@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dEADJGV9xgTL9O/Ksa6RoIN2oRl/Dc3SzLeQFxWcny4=
+			FFhJeHy+cHTGKyutiFosVT+Qske42Ya9rXlZmB9iCBk=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_sign@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cvtac2qyEQIybMnF+ibzPMNvuJEtrskhRk5+xUKLaNA=
+			7kePXLdYU5OeOgBLweM1PavYy5AfWjpnYHhNQ0WUO0o=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_space@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+89ot+I6IBp3Vr9ccTkXiEWdHsD+7I785I1NHkbt9m0=
+			cJyXo4S/CE2TTRGvCWBMT2EkXLApm/y4/pjXz1gAV84=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_specialkey_off.9.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O0nICBZJAX3YU+qobFERFF70Jd5lWTx/YUKVadZMgMQ=
+			sNl75MvSitKBVOJHHcbm/1T3LwKHQ0YEtn5wj7DmaYs=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_specialkey_on.9.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nDz9fhpto5NZ7h2HMt/4JMbh8fo235xX2WHj0qZUoPo=
+			Jh0G3DJ9nDJNIFxJIo0M7sm2X0IFC5oyOpYI7jG5YlA=
 			</data>
 		</dict>
 		<key>aikbd_btn_keyboard_text@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i77Kvfs4ksabbCnRYd9g2EAJgw/t8ZRPWYIFF1dqW2s=
+			IkItCopTdpgIQ37tGuUvFJ48zFBCXRSYrbUHMRENam4=
+			</data>
+		</dict>
+		<key>aikbd_btn_keyboard_text_2@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			884pH7UneOvYZJkZqPZdt2QsmoLUf81jeU1mzEMNuLE=
 			</data>
 		</dict>
 		<key>aikbd_btn_memo_addition@3x.png</key>
@@ -650,14 +656,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qnTmx1qkzvb0emogi6MDnS9OXYkH8Tn/JdCQiTeQvNk=
+			ibncvhDpjpWwdJYGOJs09aVoLxOCkGPBkKnRGzdn/jQ=
 			</data>
 		</dict>
 		<key>aikbd_img_keyboard_bg_origin@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bl3az9eKS1w0hbCsBvrd9l6EpuS264hZfCZZ8GppVIg=
+			boyqp+o8GoWccFPw3aJ64yUrPlbd5cxmiNBegXFcA8k=
 			</data>
 		</dict>
 		<key>aikbd_sound0.wav</key>
@@ -695,123 +701,18 @@
 			B4SXv8PY7ZItJsnx938aFyiyQpeDEjblTWeVpVtiUZw=
 			</data>
 		</dict>
-		<key>paikbd_btn_keyboard_bookmark@3x.png</key>
+		<key>kb_kb_theme_img_01_basic@3x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Q6+2zkfRiQkRKjlP5GYalUqxNU5teqHOGaZ881k4Yo=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_delete@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			k4nVjRdZ+xjcmd4jm1SgNn+uAcQN4RKjNvQ4PMGoS+c=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_emoticon@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			/CjZpjEjrG7CnpobravYfmNZ6GCc3i6F3w+N02En1xc=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_enter@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			VbG7Dl9bRZQwxyIMt5cuo2t8Lq2M4ZAJHdlg/ZIOPtw=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_icon@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			d/MtxTg90yeAG75WY947b2e4gDm7rx7pEO2Ih4KQrf0=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_icon_1@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			sfusOhfD9z2IzQrNci7MqUFx3Regrlq1+Z6GHObCIjg=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_memo@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			mrRHu9i5onn+Oad5XXTgWn9OaqMctpvoFXa2/wQMj0U=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_memo_on@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			MqckaNf6jDdK+R3SoH7LfgdGghRIY23CVie4QHs03Js=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_search@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			GC5AZTPzMr3+MSYSnC1N0RWYLvUlkQ5/kotvF6Mvz7U=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_setting@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			sYt7WDxfpXMsvOyxnIyM7ykcVX1JSnfvz/pLt5BwC+Y=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_shift@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			OW3bJnqSFCvE06zZYPmaF/ELl/HJEfkJJicCuAKFJtE=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_shift_1@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vToPx2G8Uo5gpN85V/62yV1nghciNReveIjaiiNm06Y=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_shift_2@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			VQzxUgUJWxfOU996GbhY/mvQkueQOVnOl2gHhodUQ0o=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_sign@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ZK4Z1YKxF1Lz470BExs3asdXcSnMAEMzLuXdwBL/18U=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_space@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			I3fvsupZI4yXZ2WicVaArsEV5UEUGPvAcC4J6/0CWTQ=
-			</data>
-		</dict>
-		<key>paikbd_btn_keyboard_text@3x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6Sy72vYhPS2XKVHiv2TzaMxtac7ng4Zv2XrVUEDqKTw=
+			M+44026zmuqUewVM7dZbVudee19owls8u5ISwrAaFs0=
 			</data>
 		</dict>
 		<key>theme_color.txt</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BqZeopj/snr0PS8OfExvbJH71XK0u+WM6q56PG+CKjE=
+			ngs8W9z/LWxOAdbgt2Nmy0kHsZatrNgejjus7ViVF2M=
 			</data>
 		</dict>
 	</dict>

@@ -12,7 +12,7 @@ import Foundation
 public struct DHUserDefaultsConstants: RawRepresentable {
     public var rawValue: String
     
-    static let suiteName = DHUserDefaultsConstants(rawValue: "UserDefaults_Enliple_Keyboard_SDK_2021__")
+    static let suiteName = DHUserDefaultsConstants(rawValue: "UserDefaults_Cashwalk_Keyboard_SDK_2021__")
     
     static let keyForFirstRun = DHUserDefaultsConstants(rawValue: "FirstRun")
     

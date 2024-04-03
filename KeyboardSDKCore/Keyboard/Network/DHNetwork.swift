@@ -40,18 +40,6 @@ public extension DHNetwork {
     
     func request(with baseURL: URL) -> URLRequest {
         
-//        var base:URL?
-//        if customHost.isEmpty {
-//            base = baseURL
-//        }
-//        else {
-//            base = URL(string: customHost)
-//        }
-//
-//
-//        guard let base = base, var components = URLComponents(url: base.appendingPathComponent(path), resolvingAgainstBaseURL: false) else {
-//            fatalError("Unable to create URL components")
-//        }
         
         guard var components = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false) else {
             fatalError("Unable to create URL components")
@@ -66,11 +54,10 @@ public extension DHNetwork {
         guard let url = components.url else {
             fatalError("Could not get url")
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.timeoutInterval = 15.0
-//        request.httpShouldHandleCookies = false
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         if isBodyData {

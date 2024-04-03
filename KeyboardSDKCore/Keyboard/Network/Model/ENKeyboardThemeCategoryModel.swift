@@ -2,7 +2,7 @@
 //  ENKeyboardThemeCategoryModel.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/17.
+//  Created by cashwalkKeyboard on 2021/05/17.
 //
 
 import Foundation
@@ -16,6 +16,6 @@ public struct ENKeyboardThemeCategoryModel: Codable, DHCodable {
     
     private enum CodingKeys: String, CodingKey {
         case code_id = "code_id"
-        case code_val = "code_desc"
+        case code_val = "code_val"
     }
 }

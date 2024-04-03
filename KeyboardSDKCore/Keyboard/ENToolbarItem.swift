@@ -34,86 +34,41 @@ public class ENToolbarItem: Codable {
     public var toolType: ENToolbarType {
         get {
             switch self.toolbarType {
-            case "1":
-                return .mobicomz
-            case "2":
-                return .emoji
-            case "3":
-                return .emoticon
-            case "4":
-                return .userMemo
-            case "5":
-                return .clipboard
-            case "6":
-                return .coupang
-            case "7":
-                return .offerwall
-            case "8":
-                return .dutchPay
-            case "9":
-                return .hotIssue
-            case "10":
-                return .cursorLeft
-            case "11":
-                return .cursorRight
-            case "12":
-                return .setting
-                
             case "31":
-                return .hanaEmoji
+                return .keyboardEmoji
             case "32":
-                return .hanaApp
+                return .keyboardApp
             case "33":
-                return .hanaPPZone
+                return .keyboardPPZone
             case "34":
-                return .hanaCoupang
+                return .keyboardCoupang
             case "35":
-                return .hanaPointList
+                return .keyboardPointList
             case "36":
-                return .hanaSetting
+                return .keyboardSetting
+            case "37":
+                return .keyboardCashDeal
             default:
-                return .mobicomz
+                return .keyboardEmoji
             }
         }
         set {
             switch newValue {
-            case .mobicomz:
-                self.toolbarType = "1"
-            case .emoji:
-                self.toolbarType = "2"
-            case .emoticon:
-                self.toolbarType = "3"
-            case .userMemo:
-                self.toolbarType = "4"
-            case .clipboard:
-                self.toolbarType = "5"
-            case .coupang:
-                self.toolbarType = "6"
-            case .offerwall:
-                self.toolbarType = "7"
-            case .dutchPay:
-                self.toolbarType = "8"
-            case .hotIssue:
-                self.toolbarType = "9"
-            case .cursorLeft:
-                self.toolbarType = "10"
-            case .cursorRight:
-                self.toolbarType = "11"
-            case .setting:
-                self.toolbarType = "12"
-                
-            case .hanaEmoji:
+                 
+            case .keyboardEmoji:
                 self.toolbarType = "31"
-            case .hanaApp:
+            case .keyboardApp:
                 self.toolbarType = "32"
-            case .hanaPPZone:
+            case .keyboardPPZone:
                 self.toolbarType = "33"
-            case .hanaCoupang:
+            case .keyboardCoupang:
                 self.toolbarType = "34"
-            case .hanaPointList:
+            case .keyboardPointList:
                 self.toolbarType = "35"
-            case .hanaSetting:
+            case .keyboardSetting:
                 self.toolbarType = "36"
+            case .keyboardCashDeal:
+                self.toolbarType = "37"
             }
         }
     }

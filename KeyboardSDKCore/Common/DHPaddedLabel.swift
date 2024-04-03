@@ -2,7 +2,7 @@
 //  DHPaddedLabel.swift
 //  KeyboardSDK
 //
-//  Created by enlipleIOS1 on 2021/06/02.
+//  Created by cashwalkKeyboard on 2021/06/02.
 //
 
 import UIKit
@@ -17,7 +17,6 @@ import UIKit
     public override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         super.drawText(in: rect.inset(by: insets))
-//        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
     
     public override var intrinsicContentSize: CGSize {

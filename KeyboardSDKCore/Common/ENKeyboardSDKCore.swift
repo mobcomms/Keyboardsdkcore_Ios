@@ -2,7 +2,7 @@
 //  ENKeyboardSDKCore.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/17.
+//  Created by cashwalkKeyboard on 2021/05/17.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ public class ENKeyboardSDKCore {
     public static let shared:ENKeyboardSDKCore = ENKeyboardSDKCore()
     
     /// 앱과 데이터 공유를 위한 group id
-     var groupId: String = ""
+     var groupId: String = "group.com.cashwalk.keyboardsdksample"
     
     /// 앱 api key
     public var apiKey: String = "123"
@@ -47,14 +47,7 @@ public class ENKeyboardSDKCore {
     //    ///   - apiKey: 발급받은 API키
     //    ///   - groupId: 프로젝트 설정에서 지정한 group id
     init() {
-        var groupID: String = "group.com.hana.hanamembers"
-                if let bundleID = Bundle.main.bundleIdentifier, bundleID.contains("ent") {
-                    groupID = "group.com.hana.hanamembers.ent"
-                }
-
-        self.groupId = groupID
-        self.groupId = "group.enkeyboardsdk.sample"
-        DHApi.HOST = "https://api.cashkeyboard.co.kr/API"
+        DHApi.HOST = "https://cashwalk-api.commsad.com/API/CASHWALK"
     }
     
     

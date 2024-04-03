@@ -2,7 +2,7 @@
 //  ENThemeColors.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/12.
+//  Created by cashwalkKeyboard on 2021/05/12.
 //
 
 import Foundation
@@ -37,7 +37,6 @@ public struct ENThemeColors {
         guard let json = json else {
             return
         }
-        
         tab_off = UIColor.init(hexString: readHexString(json: json, key: "tab_off"))
         tab_on = UIColor.init(hexString: readHexString(json: json, key: "tab_on"))
         top_line = UIColor.init(hexString: readHexString(json: json, key: "top_line"))

@@ -2,7 +2,7 @@
 //  ENEmojiKeyboardConfiguration.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/06/10.
+//  Created by cashwalkKeyboard on 2021/06/10.
 //
 
 

@@ -2,7 +2,7 @@
 //  EN10KeyManager.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/09/07.
+//  Created by cashwalkKeyboard on 2021/09/07.
 //
 
 import Foundation
@@ -241,17 +241,23 @@ public class EN10KeyManager: ENKeyboardManager {
                     
                 }
                 else if key == "⇧" {
-                    button.iconImageView.image = keyboardTheme.keyShiftNormalImage
                     button.titleLabel.text = ""
                     
+                    var image = keyboardTheme.keyShiftNormalImage?.withRenderingMode(.alwaysTemplate)
+
+
                     if shiftButtonState != .normal {
-                        button.iconImageView.image = keyboardTheme.keyShiftPressedImage
+                        image = keyboardTheme.keyShiftPressedImage?.withRenderingMode(.alwaysTemplate)
                     }
                     
                     if shiftButtonState == .caps {
-                        button.iconImageView.image = keyboardTheme.keyCapslockImage
+                        image = keyboardTheme.keyCapslockImage?.withRenderingMode(.alwaysTemplate)
                     }
-                    
+
+                    button.iconImageView.image = image
+
+                    button.iconImageView.tintColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text
+
                 }
                 else if key == "⌫" {
                     button.original = key
@@ -554,7 +560,6 @@ extension EN10KeyManager: EN10KeyButtonViewDelegate {
 
         if (originalKey == "⇧") {
             shiftButtonState = .caps
-//            loadKeys()
             changeKeys()
 
         }

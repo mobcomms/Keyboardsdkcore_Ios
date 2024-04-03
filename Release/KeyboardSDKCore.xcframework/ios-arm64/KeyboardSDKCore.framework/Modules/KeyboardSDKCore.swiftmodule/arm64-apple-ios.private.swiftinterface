@@ -113,14 +113,6 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
     get
     set
   }
-  public var userMemo: [Swift.String] {
-    get
-    set
-  }
-  public var toolbarStyle: KeyboardSDKCore.ENToolbarStyle {
-    get
-    set
-  }
   public var toolbarItems: [KeyboardSDKCore.ENToolbarItem] {
     get
     set
@@ -130,14 +122,6 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
     set
   }
   public var pressKeyboardCountDate: Swift.String {
-    get
-    set
-  }
-  public var useNewsAd: Swift.Bool {
-    get
-    set
-  }
-  public var useAd: Swift.Bool {
     get
     set
   }
@@ -153,21 +137,8 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
     get
     set
   }
-  public var keyboardShowCount: Swift.Int {
-    get
-    set
-  }
   public func getKeyboardHeight(isLandcape: Swift.Bool) -> CoreFoundation.CGFloat
-  public func getKeyboardCustomHeightForDutchPay() -> CoreFoundation.CGFloat
   public func getKeyboardCustomHeight(isLandcape: Swift.Bool) -> CoreFoundation.CGFloat
-  public var isUsePhotoTheme: Swift.Bool {
-    get
-    set
-  }
-  public var photoThemeInfo: KeyboardSDKCore.ENKeyboardTheme {
-    get
-    set
-  }
   public var keyboardType: KeyboardSDKCore.ENKeyboardType {
     get
     set
@@ -184,7 +155,7 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
     get
     set
   }
-  public var hanaCustomerID: Swift.String {
+  public var customerID: Swift.String {
     get
     set
   }
@@ -196,7 +167,7 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
     get
     set
   }
-  public var readyForHanaPoint: Swift.Int {
+  public var readyForPoint: Swift.Int {
     get
     set
   }
@@ -224,6 +195,7 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
 }
 public struct ENKeyboardThemeListModel : Swift.Codable, KeyboardSDKCore.DHCodable {
   public var data: [KeyboardSDKCore.ENKeyboardThemeModel]?
+  public var category: [KeyboardSDKCore.ENKeyboardThemeCategoryModel]?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -541,10 +513,6 @@ public struct ENEmojiKeyboardConfiguration {
   override public init(with proxy: (any UIKit.UITextDocumentProxy)?)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers open class DHRequestManager {
-  public static let shared: KeyboardSDKCore.DHRequestManager
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers public class ENKeyboardThemeModel : Swift.Codable, KeyboardSDKCore.DHCodable {
   public var idx: Swift.String?
   public var cat: Swift.String?
@@ -555,30 +523,12 @@ public struct ENEmojiKeyboardConfiguration {
   public var common_down_path: Swift.String?
   public var custom_down_path: Swift.String?
   public var down_cnt: Swift.String?
-  public var down_path: Swift.String?
-  public var apng_down_path: Swift.String?
-  public var isOwn: Swift.Bool {
-    get
-    set
-  }
+  public var ispopular: Swift.String?
+  public var isnew: Swift.String?
+  public var isOwn: Swift.Bool?
   public var isNew: Swift.Bool {
     get
     set
-  }
-  public var isBuy: Swift.Bool {
-    get
-    set
-  }
-  public var price: Swift.Int {
-    get
-    set
-  }
-  public var isPay: Swift.Bool {
-    get
-    set
-  }
-  public var isLive: Swift.Bool {
-    get
   }
   public static func parsing(json: Swift.String) -> KeyboardSDKCore.ENKeyboardThemeModel?
   public func themeFileInfo() -> KeyboardSDKCore.ENKeyboardThemeFileInfo
@@ -682,7 +632,6 @@ public class ENKeyboardViewManager {
   }
   public var keyboardManager: KeyboardSDKCore.ENKeyboardManager?
   weak public var delegate: (any KeyboardSDKCore.ENKeyboardViewManagerDelegate)?
-  public var isUseDutchPay: Swift.Bool
   public var isUseNotifyView: Swift.Bool
   public var keyboardTheme: KeyboardSDKCore.ENKeyboardTheme {
     get
@@ -707,7 +656,7 @@ public class ENKeyboardViewManager {
   public func updateKeys()
   public func initCustomArea(with custom: UIKit.UIView)
   public func initNotifyArea(with notify: UIKit.UIView)
-  public func updateKeyboardHeight(isLand: Swift.Bool, addedContentHeight: CoreFoundation.CGFloat = 0.0, isDutchPay: Swift.Bool = false)
+  public func updateKeyboardHeight(isLand: Swift.Bool, addedContentHeight: CoreFoundation.CGFloat = 0.0)
   @objc deinit
 }
 extension KeyboardSDKCore.ENKeyboardViewManager : KeyboardSDKCore.ENEmojiViewDelegate {
@@ -728,17 +677,6 @@ extension KeyboardSDKCore.ENKeyboardViewManager {
   public func updateConstraints()
   public func updateNotifyViewConstraint()
 }
-public struct ENKeyboardThemeCategoryListModel : Swift.Codable, KeyboardSDKCore.DHCodable {
-  public var category: KeyboardSDKCore.ENKeyboardThemeCategorySubListModel?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct ENKeyboardThemeCategorySubListModel : Swift.Codable, KeyboardSDKCore.DHCodable {
-  public var word: [KeyboardSDKCore.ENKeyboardThemeCategoryModel]?
-  public var color: [KeyboardSDKCore.ENKeyboardThemeCategoryModel]?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
 public protocol ENFrequentEmojiProvider : AnyObject, KeyboardSDKCore.ENEmojiProvider {
   func registerEmoji(_ emoji: KeyboardSDKCore.ENEmoji)
 }
@@ -746,10 +684,6 @@ extension Foundation.UserDefaults {
   public static var enKeyboardGroupStandard: Foundation.UserDefaults? {
     get
   }
-  public func isUsePhotoTheme() -> Swift.Bool
-  public func setUsePhotoTheme(isUse: Swift.Bool)
-  public func savePhotoThemeInfo(theme: KeyboardSDKCore.ENKeyboardTheme)
-  public func loadPhotoThemeInfo() -> KeyboardSDKCore.ENKeyboardTheme
   public func setSelectedThemeInfo(theme: KeyboardSDKCore.ENKeyboardThemeModel)
   public func getSelectedThemeInfo() -> KeyboardSDKCore.ENKeyboardThemeModel?
   public func setUseKeyboardButtonValuePreview(show: Swift.Bool)
@@ -757,16 +691,10 @@ extension Foundation.UserDefaults {
   public func setUseHaptic(use: Swift.Bool)
   public func setHapticPower(power: Swift.Int)
   public func getHapticPower() -> Swift.Int
-  public func setUserMemo(memo: [Swift.String])
-  public func getUserMemo() -> [Swift.String]
   public func setPressKeyboardCount(pressCount: Swift.Int)
   public func getPressKeyboardCount() -> Swift.Int
   public func setPressKeyboardCountDate(insertDate: Swift.String)
   public func getPressKeyboardCountDate() -> Swift.String
-  public func getUseNewsAd() -> Swift.Bool
-  public func setUseNewsAd(isUsed: Swift.Bool)
-  public func getUseAd() -> Swift.Bool
-  public func setUseAd(isUsed: Swift.Bool)
   public func useHaptic() -> Swift.Bool
   public func setUseSound(use: Swift.Bool)
   public func useSound() -> Swift.Bool
@@ -776,10 +704,6 @@ extension Foundation.UserDefaults {
   public func getKeyboardHeightRate() -> Swift.Float
   public func setKeyboardType(_ type: KeyboardSDKCore.ENKeyboardType)
   public func getKeyboardType() -> KeyboardSDKCore.ENKeyboardType
-  public func setToolbarStyle(toolbarStyle: KeyboardSDKCore.ENToolbarStyle)
-  public func getToolbarStyle() -> KeyboardSDKCore.ENToolbarStyle
-  public func setShowRealKeyboard(index: Swift.Int)
-  public func getShowRealKeyboard() -> Swift.Int
   public func setIsFirstUser(isFirst: Swift.Bool)
   public func getIsFirstUser() -> Swift.Bool
   public func setToolbarArray(toolbarArray: [Swift.Int])
@@ -794,15 +718,15 @@ extension Foundation.UserDefaults {
   public func getPPZToken() -> Swift.String
   public func getFirstUsingKeyboard() -> Swift.Bool
   public func setFirstUsingKeyboard(isFlag: Swift.Bool)
-  public func setHanaCustomerID(customerID: Swift.String)
-  public func getHanaCustomerID() -> Swift.String
+  public func setCustomerID(customerID: Swift.String)
+  public func getCustomerID() -> Swift.String
   public func getToastMsg() -> Swift.String
   public func setUsingKeyboardCnt(cnt: Swift.Int)
   public func getUsingKeyboardCnt() -> Swift.Int
   public func setUsingKeyboardCntFlag(cntFlag: Swift.Bool)
   public func getUsingKeyboardCntFlag() -> Swift.Bool
-  public func setReadyForHanaPoint(point: Swift.Int)
-  public func getReadyForHanaPoint() -> Swift.Int
+  public func setReadyForPoint(point: Swift.Int)
+  public func getReadyForPoint() -> Swift.Int
   public func setToolbarBrandUrl(brandUrl: Swift.String)
   public func getToolbarBrandUrl() -> Swift.String
   public func setToolbarBrandImageUrl(brandImageUrl: Swift.String)
@@ -839,24 +763,13 @@ public protocol ENEmojiProvider {
   @objc deinit
 }
 public enum ENToolbarType : Swift.Int {
-  case mobicomz
-  case emoji
-  case emoticon
-  case userMemo
-  case clipboard
-  case coupang
-  case offerwall
-  case dutchPay
-  case hotIssue
-  case cursorLeft
-  case cursorRight
-  case setting
-  case hanaEmoji
-  case hanaApp
-  case hanaPPZone
-  case hanaCoupang
-  case hanaPointList
-  case hanaSetting
+  case keyboardEmoji
+  case keyboardApp
+  case keyboardPPZone
+  case keyboardCoupang
+  case keyboardPointList
+  case keyboardSetting
+  case keyboardCashDeal
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -876,7 +789,6 @@ public struct ENKeyboardThemeFileInfo {
   public var name: Swift.String
   public var keyboardUrl: Swift.String?
   public var customUrl: Swift.String?
-  public static func getDefaultTheme() -> KeyboardSDKCore.ENKeyboardThemeFileInfo
 }
 @_hasMissingDesignatedInitializers public class ENKeyboardThemeManager {
   public typealias ENKeyboardThemeManagerHandler = (_ theme: KeyboardSDKCore.ENKeyboardTheme) -> Swift.Void
@@ -891,11 +803,6 @@ extension KeyboardSDKCore.ENKeyboardThemeManager {
   public func download(theme: KeyboardSDKCore.ENKeyboardThemeFileInfo, complete: @escaping (_ success: Swift.Bool) -> ())
   public func alreadyDownlaoded(theme: KeyboardSDKCore.ENKeyboardThemeFileInfo) -> Swift.Bool
   public func removeDownloadedTheme(theme: KeyboardSDKCore.ENKeyboardThemeFileInfo)
-}
-extension KeyboardSDKCore.ENKeyboardThemeManager {
-  public func savePhotoThemeBackground(image: UIKit.UIImage, complete: @escaping (_ success: Swift.Bool) -> ())
-  public func savePhotoTheme(with theme: KeyboardSDKCore.ENKeyboardTheme, originImage: UIKit.UIImage?, complete: @escaping (_ success: Swift.Bool) -> ())
-  public func croppedImageForPhotoTheme(theme: KeyboardSDKCore.ENKeyboardTheme) -> UIKit.UIImage?
 }
 public struct DHApi {
   public static var HOST: Swift.String
@@ -1060,7 +967,6 @@ public class ENKeyboardTheme {
 }
 extension KeyboardSDKCore.ENKeyboardTheme {
   public func clear()
-  public func loadPhotoThemeIcons()
 }
 public enum ENKeyboardType : Swift.Int {
   case qwerty

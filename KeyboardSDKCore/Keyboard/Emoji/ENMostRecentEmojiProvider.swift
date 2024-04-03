@@ -2,7 +2,7 @@
 //  ENMostRecentEmojiProvider.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/06/10.
+//  Created by cashwalkKeyboard on 2021/06/10.
 //
 
 
@@ -28,7 +28,7 @@ public class ENMostRecentEmojiProvider: ENFrequentEmojiProvider {
     
     private let defaults: UserDefaults
     private let maxCount: Int
-    private let key = "com.enliple.MostRecentEmojiProvider.emojis"
+    private let key = "com.cashwalk.MostRecentEmojiProvider.emojis"
     
     public var emojis: [ENEmoji] {
         emojiChars.map { ENEmoji($0) }

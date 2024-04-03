@@ -2,7 +2,7 @@
 //  ENQwertyManager.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/04.
+//  Created by cashwalkKeyboard on 2021/05/04.
 //
 
 import Foundation
@@ -23,7 +23,7 @@ public class ENQwertyManager: ENKeyboardManager {
         
         super.updateKeyboardFrame(frame: frame)
         
-        var frameWidth = frame.size.width   // < frame.size.height ? frame.size.width : frame.size.height
+        var frameWidth = frame.size.width
         if (!needsInputModeSwitchKey) {
             if frame.size.width == max(UIScreen.main.bounds.width, UIScreen.main.bounds.height) {
                 frameWidth *= 0.815
@@ -100,12 +100,9 @@ public class ENQwertyManager: ENKeyboardManager {
         }
         
         let buttonWidth:CGFloat = ((frameWidth < 6 ? UIScreen.main.bounds.width : frameWidth) - 6) / CGFloat(ENConstants.alphabetKeys[0].count)
-//        DHLogger.log("[button size] buttonWidth : \(buttonWidth)  from \(size) and loadKeys")
-        
         
         var keyboard: [[String]]
         
-        //select keyboard, start padding
         switch keyboardState {
         case .numbers:
             keyboard = ENConstants.numberKeys
@@ -114,7 +111,7 @@ public class ENQwertyManager: ENKeyboardManager {
             keyboard = ENConstants.symbolKeys
         
         
-        default:            //case .letter
+        default:
             if isAlphabet {
                 keyboard = ENConstants.alphabetKeys
                 addPadding(to: stackView2, width: buttonWidth/2, key: "a")
@@ -205,16 +202,21 @@ public class ENQwertyManager: ENKeyboardManager {
                     button.titleLabel.text = ""
                     
                     if key == "⇧" {
-                        button.iconImageView.image = UIImage.init(named: "paikbd_btn_keyboard_shift", in: Bundle.frameworkBundle, compatibleWith: nil)
-                        
+                        var image = keyboardTheme.keyShiftNormalImage?.withRenderingMode(.alwaysTemplate)
+
+
                         if shiftButtonState != .normal {
-                            button.iconImageView.image = UIImage.init(named: "paikbd_btn_keyboard_shift_2", in: Bundle.frameworkBundle, compatibleWith: nil)
+                            image = keyboardTheme.keyShiftPressedImage?.withRenderingMode(.alwaysTemplate)
                         }
                         
                         if shiftButtonState == .caps {
-                            button.iconImageView.image = UIImage.init(named: "paikbd_btn_keyboard_shift_2", in: Bundle.frameworkBundle, compatibleWith: nil)
+                            image = keyboardTheme.keyCapslockImage?.withRenderingMode(.alwaysTemplate)
                         }
-                        
+
+                        button.iconImageView.image = image
+
+                        button.iconImageView.tintColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text
+
                     }
                     
                     if key == "letter" {
@@ -325,15 +327,22 @@ public class ENQwertyManager: ENKeyboardManager {
                     button  =  stackView3?.arrangedSubviews[col] as? ENKeyButtonView
                 }
                 if key == "⇧" {
-                    button.iconImageView.image = UIImage.init(named: "paikbd_btn_keyboard_shift", in: Bundle.frameworkBundle, compatibleWith: nil)
-                    
+//                    
+                    var image = keyboardTheme.keyShiftNormalImage?.withRenderingMode(.alwaysTemplate)
+
+
                     if shiftButtonState != .normal {
-                        button.iconImageView.image = UIImage.init(named: "paikbd_btn_keyboard_shift_2", in: Bundle.frameworkBundle, compatibleWith: nil)
+                        image = keyboardTheme.keyShiftPressedImage?.withRenderingMode(.alwaysTemplate)
                     }
                     
                     if shiftButtonState == .caps {
-                        button.iconImageView.image = UIImage.init(named: "paikbd_btn_keyboard_shift_2", in: Bundle.frameworkBundle, compatibleWith: nil)
+                        image = keyboardTheme.keyCapslockImage?.withRenderingMode(.alwaysTemplate)
                     }
+
+                    button.iconImageView.image = image
+
+                    button.iconImageView.tintColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text
+
                     
                 }else if key == "⌫" {
 //                    button.iconImageView.image = keyboardTheme.keyDeleteImage
@@ -434,9 +443,6 @@ extension ENQwertyManager {
                 globalSubMenu?.changeTheme(theme: keyboardTheme.themeColors)
             }
 
-//            let subFrame = CGRect.init(origin: CGPoint(x: next.frame.origin.x,
-//                                                       y: nextP.frame.origin.y - (ENKeyboardGlobalSubMenuView.needSize.height + 5)),
-//                                       size: ENKeyboardGlobalSubMenuView.needSize)
             let subFrame = CGRect.init(origin: CGPoint(x: next.frame.origin.x,
                                                        y: nextP.frame.origin.y - (ENKeyboardGlobalSubMenuView.needSize.height * 1.5)),
                                        size: ENKeyboardGlobalSubMenuView.needSize)
@@ -499,7 +505,6 @@ extension ENQwertyManager: ENKeyButtonViewDelegate {
         case "⌫":
             if shiftButtonState == .shift {
                 shiftButtonState = .normal
-//                loadKeys()
                 changeKeys()
             }
             handlDeleteButtonPressed()
@@ -531,14 +536,10 @@ extension ENQwertyManager: ENKeyButtonViewDelegate {
             
         case "⇧":
             shiftButtonState = shiftButtonState == .normal ? .shift : .normal
-//            loadKeys()
             changeKeys()
         default:
-//            preview.removeFromSuperview()
-
             preview.hidePreview(from: sender)
             
-         
             delegate?.textInputted(manager: self, text: keyToDisplay)
             automata?.makeTextWith(inputed: keyToDisplay)
             // MARK: 쌍자음 다음입력된 모음 순서가 반대로 나오는 문제 수정 / 추가 된 날짜 : 2024 01 24 / 손재민
@@ -558,7 +559,6 @@ extension ENQwertyManager: ENKeyButtonViewDelegate {
         
         if (originalKey == "⇧") {
             shiftButtonState = .caps
-//            loadKeys()
             changeKeys()
         }
     }
@@ -582,8 +582,6 @@ extension ENQwertyManager: ENKeyButtonViewDelegate {
         
         // 백그라운드 이미지에서 임의의 point 의 색상을 구한다.
         // 구해온 색상이 밝은지 어두운지 판단한다.
-
-        
         
         if let tempColor = keyboardTheme.backgroundImage?.getPixelColor(pos: point) {
             if tempColor.isLight() {

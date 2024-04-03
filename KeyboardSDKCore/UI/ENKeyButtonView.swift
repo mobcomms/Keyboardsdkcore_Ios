@@ -2,7 +2,7 @@
 //  ENKeyButtonView.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/06/02.
+//  Created by cashwalkKeyboard on 2021/06/02.
 //
 
 import Foundation
@@ -89,7 +89,7 @@ class ENKeyButtonView: UIView {
         
         let capsKey = key.capitalized
         let keyToDisplay = shiftButtonState == .normal ? key : capsKey
-        
+
         self.original = key
         self.keyToDisplay = keyToDisplay
         self.isSpecial = false
@@ -190,8 +190,8 @@ class ENKeyButtonView: UIView {
         let keyToDisplay = shiftButtonState == .normal ? key : capsKey
         self.keyToDisplay = keyToDisplay
         self.original = keyToDisplay
-
         titleLabel.text = keyToDisplay
+
     }
     
     
@@ -218,8 +218,6 @@ class ENKeyButtonView: UIView {
         if keyboardTheme.isPhotoTheme {
             backgroundImageView.backgroundColor = keyboardTheme.themeColors.nor_btn_color
             backgroundImageView.image = nil
-//            backgroundImageView.highlightedImage = nil
-            
             self.backgroundImageView.layer.applyRounding(cornerRadius: 5, borderColor: .clear, borderWidth: 0.0, masksToBounds: true)
         }
         else {
@@ -240,7 +238,6 @@ class ENKeyButtonView: UIView {
             if keyboardTheme.isPhotoTheme {
                 backgroundImageView.backgroundColor = keyboardTheme.themeColors.sp_btn_color
                 backgroundImageView.image = nil
-//                backgroundImageView.highlightedImage = nil
                 self.backgroundImageView.layer.applyRounding(cornerRadius: 5, borderColor: .clear, borderWidth: 0.0, masksToBounds: true)
             }
             else {
@@ -254,16 +251,23 @@ class ENKeyButtonView: UIView {
             
             
             if original == "⇧" {
-                iconImageView.image = keyboardTheme.keyShiftNormalImage
-                
+             
+                var image = keyboardTheme.keyShiftNormalImage?.withRenderingMode(.alwaysTemplate)
+
+
                 if shiftButtonState != .normal {
-                    iconImageView.image = keyboardTheme.keyShiftPressedImage
+                    image = keyboardTheme.keyShiftPressedImage?.withRenderingMode(.alwaysTemplate)
                 }
                 
                 if shiftButtonState == .caps {
-                    iconImageView.image = keyboardTheme.keyCapslockImage
+                    image = keyboardTheme.keyCapslockImage?.withRenderingMode(.alwaysTemplate)
                     self.isSelected = true
                 }
+                iconImageView.image = image
+
+                iconImageView.tintColor = ENKeyboardThemeManager.shared.loadedTheme?.themeColors.key_text
+
+                
             }
             if original == "🌐" && titleLabel.text != "한영"{
                 if needsInputModeSwitchKey {
@@ -360,7 +364,6 @@ class ENKeyButtonView: UIView {
     
     
     @objc func excuteTapGesutre(gesture: UITapGestureRecognizer) {
-//        backgroundImageView.transform = CGAffineTransform.identity.translatedBy(x: 0, y: 2.0)
         backgroundImageView.isHighlighted = true
         ENKeyButtonEffectManager.shared.excute()
         delegate?.enKeyPressedTouchUp(self)
@@ -369,7 +372,6 @@ class ENKeyButtonView: UIView {
     @objc func excuteLongPressGesture(gesture: UILongPressGestureRecognizer) {
         if gesture.state == .began {
             backgroundImageView.isHighlighted = true
-//            backgroundImageView.transform = CGAffineTransform.identity.translatedBy(x: 0, y: 2.0)
             ENKeyButtonEffectManager.shared.excute()
             delegate?.enKeyMultiPress(self)
         }

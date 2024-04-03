@@ -2,7 +2,7 @@
 //  ENKeyboardManager.swift
 //  KeyboardSDKCore
 //
-//  Created by enlipleIOS1 on 2021/05/04.
+//  Created by cashwalkKeyboard on 2021/05/04.
 //
 
 import Foundation
@@ -131,8 +131,6 @@ open class ENKeyboardManager: NSObject {
                         img.isHighlighted = true
                     }
                 }
-//                targetView.transform = CGAffineTransform.identity.translatedBy(x: 0, y: 2.0)
-//                targetView.backgroundColor = UIColor(red: 12/255, green: 177/255, blue: 167/255, alpha: 1)
             }
             deleteSpeedUpTime = 2.5
             backspaceTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] (timer) in
