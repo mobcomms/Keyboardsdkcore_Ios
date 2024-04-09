@@ -45,13 +45,15 @@ public class ENKeyButtonEffectManager {
             AudioServicesCreateSystemSoundID(url as CFURL, &feedbackSoundID)
         }
         else {
-            feedbackSoundID = 0
+            feedbackSoundID =  0
         }
     }
  
     
     func excute() {
-        if self.feedbackSoundID > 0 {
+
+        if self.feedbackSoundID > 0  {
+
             AudioServicesPlaySystemSound(feedbackSoundID)
         }
 

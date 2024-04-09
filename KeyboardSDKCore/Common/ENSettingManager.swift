@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import AppTrackingTransparency
+import AdSupport
 
 
 /// 키보드 관련 설정값을 관리할 manager 객체
@@ -241,11 +243,37 @@ public class ENSettingManager {
     /// 광고 IDFA getter & setter
     public var userIdfa: String {
         get {
-            return UserDefaults.enKeyboardGroupStandard?.getIDFA() ?? ""
+            var tempIdfa = ""
+
+            if #available(iOS 14, *) {
+                if ATTrackingManager.trackingAuthorizationStatus == .authorized {
+                    tempIdfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                }else {
+                    tempIdfa = ""
+                }
+            }else {
+                tempIdfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+            }
+
+            if tempIdfa.isEmpty {
+                tempIdfa = vendorID
+
+            }
+            self.userIdfa = tempIdfa
+            return tempIdfa
+
         }
         
         set {
             UserDefaults.enKeyboardGroupStandard?.setIDFA(idfa: newValue)
+
+        }
+    }
+    var vendorID : String {
+        if let vendor = UIDevice.current.identifierForVendor {
+            return "hana_\(vendor.uuidString)"
+        }else{
+            return ""
         }
     }
     /// PPZ Token getter & setter

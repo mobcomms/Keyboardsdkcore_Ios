@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/KeyboardSDKCore-Swift.h</key>
 		<data>
-		9v2nCr6jx7TssiPsrQlZxL/uSM4=
+		35WnIDQ2WRSMms4JA9+ntU3pXE4=
 		</data>
 		<key>Headers/KeyboardSDKCore.h</key>
 		<data>
@@ -18,47 +18,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IL0h2RahlhUYR+l212TmNQyQ3lc=
+		7FdMM9wEfMqwumYDhrtitYNQN54=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		m2wMyrdn7oZq9HQV6F1f56/mq+I=
+		XG97VOkhwk6UgovdTIhtGaHpLUw=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		tz1D0gNhwt2D96dro27gzp6g9m8=
+		HbfxpHuaBt4r4Yj90ZZsHHk0wSQ=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		rpyGJsiaheUGV4MYjiuMZKYdLu4=
+		ZDdkVUQ1eIlppahfQBbx35AwXg0=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		tz1D0gNhwt2D96dro27gzp6g9m8=
+		HbfxpHuaBt4r4Yj90ZZsHHk0wSQ=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		PhLdTTFKQiNMgHic/b7SfKb4Hy8=
+		Pbn9/BUyM6G4VI98tSaZVrqIb5M=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		m2wMyrdn7oZq9HQV6F1f56/mq+I=
+		XG97VOkhwk6UgovdTIhtGaHpLUw=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		93bTb7teAe9Zuad/r22NDOxpdxo=
+		iElSzhHyt5kjZzVWy8fD8nd6EMA=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		YQHJj8EMTb7IhpHoCZMgaLYhF0c=
+		WwFXQv8P1qMR9KloarnyBpMAa4k=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		93bTb7teAe9Zuad/r22NDOxpdxo=
+		iElSzhHyt5kjZzVWy8fD8nd6EMA=
 		</data>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8VvzEmzeYVpmIRuoP+r/B/1g8RI=
+		ro9ePo0PfEATYJFOwBwxKybiyMQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -307,7 +307,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CrbNul4UDaOYFXoF6sBM+EWr5nyhvH4tB3fjYi15xLg=
+			7LuCfGENuO0nNB8AO8gfM47pQ/dBKJGHU/g7yIB5lI0=
 			</data>
 		</dict>
 		<key>Headers/KeyboardSDKCore.h</key>
@@ -328,70 +328,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1yQrBUVOuiMpgC+3HeKkubxKsfK+17lNjyH42wI+sGY=
+			6MGiJWwuRWncfGapp6Gva+fQgn6unEk+QPWKYNmcvmM=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fkoKB5b1TEFX5Y47Wz4okynPlW+6qjxofAOS6mVCays=
+			faKSpGVTvEellKTYIfKT3AJ3zla2DzSFITSFD/HZ/iA=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jduB2JJPOolKqtD2VQ5x6PVU378JTyJokJz2Vi+3Mhw=
+			X/UpR26PexPbgX5FYDfD6y3iyn09jFKn7/LU6P11f0A=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fkoKB5b1TEFX5Y47Wz4okynPlW+6qjxofAOS6mVCays=
+			faKSpGVTvEellKTYIfKT3AJ3zla2DzSFITSFD/HZ/iA=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N84JXIaP/1IXqNhpcuWgEh6hkmDlmHPx5EoeNkmEFFU=
+			UT+CsJee3A+dpmN+6Mazh22PJMWAAp/Sycb4vRvbIfA=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1yQrBUVOuiMpgC+3HeKkubxKsfK+17lNjyH42wI+sGY=
+			6MGiJWwuRWncfGapp6Gva+fQgn6unEk+QPWKYNmcvmM=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pkUUJbOvHVF1p4uDVdMzYCtZIcZTmgX7+eRaoVhKHf0=
+			J9TGjiVrl3/VfwSLp5M9xHpiMME6G0UNnmzQnTIWdlA=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+QWJFPno8rEblK+c83h2xLWuSkXOynNSUQyjNkBBqiU=
+			l69wIQitPrTrmvev2qdvKRTXp2rveN7Pm0RgnrHzCwo=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pkUUJbOvHVF1p4uDVdMzYCtZIcZTmgX7+eRaoVhKHf0=
+			J9TGjiVrl3/VfwSLp5M9xHpiMME6G0UNnmzQnTIWdlA=
 			</data>
 		</dict>
 		<key>Modules/KeyboardSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l34e8mBxP1A9viPNrNGeG4JvczpYd+7hoW3KMiCpJiU=
+			X9piMySq2IIwVj2Hr4wUUq6fnb1zIvWx5ApZGRTrJvs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
