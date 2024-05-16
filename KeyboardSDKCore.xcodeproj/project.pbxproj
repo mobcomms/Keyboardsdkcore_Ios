@@ -165,6 +165,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		257D57592BE0AB070011FB0A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		2650EDED2ABC4CF600ECA4AE /* KeyboardSDKCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KeyboardSDKCore.xcframework; path = Release/KeyboardSDKCore.xcframework; sourceTree = "<group>"; };
 		26FCE1742AA84D95000427C9 /* ENToolbarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENToolbarStyle.swift; sourceTree = "<group>"; };
 		26FCE1762AA85B9C000427C9 /* ENToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENToolbarItem.swift; sourceTree = "<group>"; };
@@ -465,6 +466,7 @@
 			children = (
 				66F3BEAA26608FAD00781D44 /* Resource */,
 				66D131322643C0F500C5E9E1 /* Info.plist */,
+				257D57592BE0AB070011FB0A /* PrivacyInfo.xcprivacy */,
 				66D131312643C0F500C5E9E1 /* KeyboardSDKCore.h */,
 				66155940264BDEA10005363F /* KeyboardSDKCore.m */,
 				662CEC38264A620D00C7DEC1 /* LIB */,

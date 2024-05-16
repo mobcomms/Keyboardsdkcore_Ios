@@ -244,7 +244,6 @@ public class ENSettingManager {
     public var userIdfa: String {
         get {
             var tempIdfa = ""
-
             if #available(iOS 14, *) {
                 if ATTrackingManager.trackingAuthorizationStatus == .authorized {
                     tempIdfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
@@ -271,9 +270,9 @@ public class ENSettingManager {
     }
     var vendorID : String {
         if let vendor = UIDevice.current.identifierForVendor {
-            return "hana_\(vendor.uuidString)"
+            return "\(vendor.uuidString)"
         }else{
-            return ""
+            return "\(UUID().uuidString)"
         }
     }
     /// PPZ Token getter & setter

@@ -65165,147 +65165,112 @@
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 7199,
+      "offset": 7198,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 7436,
-      "length": 39,
-      "value": "\"shared.userIdfa get inner \""
-    },
-    {
-      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7474,
-      "length": 2,
+      "offset": 7728,
+      "length": 22,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 7547,
-      "length": 34,
-      "value": "\"shared.userIdfa get  \""
-    },
-    {
-      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7580,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7675,
-      "length": 33,
-      "value": "\"shared.userIdfa set \""
-    },
-    {
-      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7707,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7912,
-      "length": 27,
-      "value": "\"hana_\""
-    },
-    {
-      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7938,
+      "offset": 7749,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 7974,
-      "length": 2,
+      "offset": 7785,
+      "length": 22,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 8149,
+      "offset": 7806,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
+      "kind": "StringLiteral",
+      "offset": 7980,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8479,
+      "offset": 8310,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 8810,
+      "offset": 8641,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9287,
+      "offset": 9118,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 9946,
+      "offset": 9777,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10569,
+      "offset": 10400,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 10901,
+      "offset": 10732,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 11255,
+      "offset": 11086,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 11541,
+      "offset": 11372,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "StringLiteral",
-      "offset": 11930,
+      "offset": 11761,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENSettingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12372,
+      "offset": 12203,
       "length": 5,
       "value": "false"
     },
