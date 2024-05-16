@@ -65907,14 +65907,7 @@
     {
       "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENKeyboardSDKCore.swift",
       "kind": "StringLiteral",
-      "offset": 1466,
-      "length": 28,
-      "value": "\"group.enkeyboardsdk.sample\""
-    },
-    {
-      "filePath": "\/Users\/sonjaemin\/00.Enliple\/01.ENKeyboardsdkcore_Ios\/KeyboardSDKCore\/Common\/ENKeyboardSDKCore.swift",
-      "kind": "StringLiteral",
-      "offset": 1516,
+      "offset": 1518,
       "length": 36,
       "value": "\"https:\/\/api.cashkeyboard.co.kr\/API\""
     },

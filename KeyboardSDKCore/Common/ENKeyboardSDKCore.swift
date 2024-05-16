@@ -53,7 +53,7 @@ public class ENKeyboardSDKCore {
                 }
 
         self.groupId = groupID
-        self.groupId = "group.enkeyboardsdk.sample"
+//        self.groupId = "group.enkeyboardsdk.sample"
         DHApi.HOST = "https://api.cashkeyboard.co.kr/API"
     }
     
