@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		25751AF42BFC3E65002752EB /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 25751AF32BFC3E65002752EB /* PrivacyInfo.xcprivacy */; };
 		26FCE1752AA84D95000427C9 /* ENToolbarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE1742AA84D95000427C9 /* ENToolbarStyle.swift */; };
 		26FCE1772AA85B9C000427C9 /* ENToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE1762AA85B9C000427C9 /* ENToolbarItem.swift */; };
 		26FCE1792AA85C1B000427C9 /* ENToolbarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE1782AA85C1B000427C9 /* ENToolbarType.swift */; };
@@ -165,7 +166,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		257D57592BE0AB070011FB0A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		25751AF32BFC3E65002752EB /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		2650EDED2ABC4CF600ECA4AE /* KeyboardSDKCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KeyboardSDKCore.xcframework; path = Release/KeyboardSDKCore.xcframework; sourceTree = "<group>"; };
 		26FCE1742AA84D95000427C9 /* ENToolbarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENToolbarStyle.swift; sourceTree = "<group>"; };
 		26FCE1762AA85B9C000427C9 /* ENToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENToolbarItem.swift; sourceTree = "<group>"; };
@@ -447,6 +448,7 @@
 		66D131242643C0F500C5E9E1 = {
 			isa = PBXGroup;
 			children = (
+				25751AF32BFC3E65002752EB /* PrivacyInfo.xcprivacy */,
 				66D131302643C0F500C5E9E1 /* KeyboardSDKCore */,
 				66D1312F2643C0F500C5E9E1 /* Products */,
 				2650EDEC2ABC4CF600ECA4AE /* Frameworks */,
@@ -466,7 +468,6 @@
 			children = (
 				66F3BEAA26608FAD00781D44 /* Resource */,
 				66D131322643C0F500C5E9E1 /* Info.plist */,
-				257D57592BE0AB070011FB0A /* PrivacyInfo.xcprivacy */,
 				66D131312643C0F500C5E9E1 /* KeyboardSDKCore.h */,
 				66155940264BDEA10005363F /* KeyboardSDKCore.m */,
 				662CEC38264A620D00C7DEC1 /* LIB */,
@@ -774,6 +775,7 @@
 				66F3BEB82660962E00781D44 /* aikbd_sound1.wav in Resources */,
 				66458AB2268BFCE20067569D /* paikbd_btn_keyboard_icon@3x.png in Resources */,
 				66458ABA268BFCE20067569D /* paikbd_btn_keyboard_memo@3x.png in Resources */,
+				25751AF42BFC3E65002752EB /* PrivacyInfo.xcprivacy in Resources */,
 				66458AB3268BFCE20067569D /* paikbd_btn_keyboard_setting@3x.png in Resources */,
 				66FB4A8C269D6427001AB6A0 /* aikbd_btn_keyboard_enter@3x.png in Resources */,
 				66458AAE268BFCE20067569D /* paikbd_btn_keyboard_shift_1@3x.png in Resources */,
